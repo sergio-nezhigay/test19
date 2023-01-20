@@ -1,2 +1,29 @@
-@import './common';
-@import './example';
+//=======================================
+// Do not change the order of those files
+//=======================================
+
+// ABSTRACT
+@import 'abstracts/variables';
+
+@import 'abstracts/mixins';
+@import 'abstracts/helpers';
+// @import 'abstracts/functions';
+
+// BASE
+
+@import 'base/reset';
+@import 'base/global';
+// @import 'base/typography';
+@import 'base/shame';
+
+// LAYOUT
+
+@import 'layout/header';
+// @import 'layout/footer';
+
+// COMPONENTS
+// @import 'components/logo';
+// @import 'components/buttons';
+
+// PAGES
+// @import 'pages/home';
