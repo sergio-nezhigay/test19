@@ -13,7 +13,7 @@
 
 .js-menu {
   position: fixed;
-  right: 0;
+  right: calc((100% - $mobile) / 2);
   bottom: 0;
   width: 350px;
   height: 100vh;
@@ -105,6 +105,6 @@
 }
 
 .scroll-disable {
-  position: fixed;
-  overflow-y: scroll;
+  // position: fixed;
+  // overflow-y: scroll;
 }
