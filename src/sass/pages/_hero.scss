@@ -1,11 +1,11 @@
 .hero {
-  background: var(--background-gradient);
-  background-image: url('../images/icons.svg#icon-h');
+  // background: var(--background-gradient);
+  background-image: url('../images/h.svg'), var(--background-gradient);
   // padding-top: 231px;
   // padding-bottom: 231px;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: 45%;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   height: 100vh;
   position: relative;

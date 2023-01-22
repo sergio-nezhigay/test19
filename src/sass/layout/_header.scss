@@ -26,6 +26,9 @@
   @include for-size(desktopsd) {
     left: calc((100% - $desktopsd) / 2);
   }
+  @include for-size(desktophd) {
+    left: calc((100% - $desktophd) / 2);
+  }
   &__row {
     position: relative;
     &--first {
