@@ -1,8 +1,12 @@
 .hero {
   background: var(--background-gradient);
-  background-image: url('../images/icons.svg#icon-logo-legal');
+  background-image: url('../images/icons.svg#icon-h');
   // padding-top: 231px;
   // padding-bottom: 231px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
   height: 100vh;
   position: relative;
   display: flex;
