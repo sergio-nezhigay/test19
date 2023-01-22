@@ -1,4 +1,5 @@
 <header class="header section">
+  <!-- Block address -->
   <div class="header__row header__row--first">
     <div class="container header__container">
       <div class="radio">
@@ -9,37 +10,39 @@
         <input type="radio" name="radio" id="en" checked class="radio__input" />
         <label for="en" class="radio__label">EN</label>
       </div>
-      <ul class="header__contacts-list">
-        <li class="header__contacts-item">
-          <a
-            href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9C%D0%B5%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0,+14%2F1,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.436795,30.5305163,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf07295b8e39:0x17b2112e2dc0e7a!8m2!3d50.436795!4d30.532705"
-            target="_blank"
-            rel="nofollow"
-            class="header__link header__link--grey"
-            >Kyiv, Mechnikova str., 14/1</a
-          >
-        </li>
-        <li class="header__contacts-item">
-          <a href="tel:0800 211 927" class="header__link header__link--phone"
-            >0800 211 927</a
-          >
-        </li>
-        <li class="header__contacts-item">
-          <a
-            href="./index.html"
-            target="_blank"
-            rel="nofollow"
-            class="header__link header__link--facebook"
-          >
-            <svg height="24" width="24" class="icon">
-              <use href="./images/icons.svg#icon-logo-facebook"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
+      <address>
+        <ul class="header__contacts-list">
+          <li class="header__contacts-item">
+            <a
+              href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9C%D0%B5%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0,+14%2F1,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.436795,30.5305163,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf07295b8e39:0x17b2112e2dc0e7a!8m2!3d50.436795!4d30.532705"
+              target="_blank"
+              rel="nofollow"
+              class="header__link header__link--grey"
+              >Kyiv, Mechnikova str., 14/1</a
+            >
+          </li>
+          <li class="header__contacts-item">
+            <a href="tel:0800 211 927" class="header__link header__link--phone"
+              >0800 211 927</a
+            >
+          </li>
+          <li class="header__contacts-item">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="nofollow"
+              class="header__link header__link--facebook"
+            >
+              <svg height="24" width="24" class="icon">
+                <use href="./images/icons.svg#icon-logo-facebook"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </address>
     </div>
   </div>
-
+  <!-- Block Logo/breadcrumbs -->
   <div class="header__row header__row--second">
     <div class="container header__container">
       <a href="./index.html">
@@ -50,6 +53,7 @@
       <!-- <svg height="26" width="12" class="icon">
       <use href="./images/icons.svg#icon-slash"></use>
     </svg> -->
+
       <button
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -65,26 +69,45 @@
       </button>
     </div>
   </div>
-
-  <div class="js-menu">
-    <ul class="js-menu__list js-menu__list--copy">
-      <li class="js-menu__item">
-        <a href="" class="js-menu__link">Home</a>
-      </li>
-      <li class="js-menu__item">
-        <a href="" class="js-menu__link">About</a>
-      </li>
-      <li class="js-menu__item">
-        <a href="" class="js-menu__link">Team</a>
-      </li>
-      <li class="js-menu__item">
-        <a href="" class="js-menu__link">Services</a>
-      </li>
-      <li class="js-menu__item">
-        <a href="" class="js-menu__link">Publications</a>
-      </li>
-    </ul>
-  </div>
-
-  <nav></nav>
+  <!-- Block Mobile/Desktop menus -->
+  <nav>
+    <div class="container">
+      <ul class="menu">
+        <li>
+          <a href="#" class="menu__link">about us</a>
+        </li>
+        <li>
+          <a href="#" class="menu__link">services</a>
+        </li>
+        <li>
+          <a href="#" class="menu__link">team</a>
+        </li>
+        <li>
+          <a href="#" class="menu__link">publications</a>
+        </li>
+        <li>
+          <a href="#" class="menu__link">contact</a>
+        </li>
+      </ul>
+    </div>
+    <div class="js-menu">
+      <ul class="js-menu__list js-menu__list--copy">
+        <li class="js-menu__item">
+          <a href="" class="js-menu__link">Home</a>
+        </li>
+        <li class="js-menu__item">
+          <a href="" class="js-menu__link">About</a>
+        </li>
+        <li class="js-menu__item">
+          <a href="" class="js-menu__link">Team</a>
+        </li>
+        <li class="js-menu__item">
+          <a href="" class="js-menu__link">Services</a>
+        </li>
+        <li class="js-menu__item">
+          <a href="" class="js-menu__link">Publications</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
