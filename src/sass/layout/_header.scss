@@ -2,6 +2,9 @@
 // Header
 //============
 .header {
+  max-width: $mobile;
+  margin: 0 auto;
+  background: var(--background-gradient);
   &__phone {
     @extend %link;
     font-weight: 700;
@@ -13,6 +16,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
+    background: rgba(245, 245, 250, 0.2);
   }
 }
 
@@ -33,28 +37,25 @@ label {
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
-  /* identical to box height */
-
   text-align: center;
   letter-spacing: 1px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: inherit;
-
-  width: 80px;
-  height: 40px;
-  text-align: center;
-  border-radius: 9999px;
+  width: 33px;
+  height: 25px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: linear 0.3s;
-  color: #6e6e6edd;
+  background-color: inherit;
+  transition: background-color var(--animation);
+  color: var(--color-white);
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 input[type='radio']:checked + label {
-  background-color: #1e90ff;
-  color: #f1f3f5;
-  font-weight: 900;
-  transition: 0.3s;
+  background-color: #f0145a;
+  // transition: 0.3s;
 }
