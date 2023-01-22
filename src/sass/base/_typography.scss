@@ -89,38 +89,3 @@
       format('svg');
   /* Legacy iOS */
 }
-
-/*--Times New Roman - cyr normal--*/
-@font-face {
-  font-family: 'Times New Roman';
-  src: url('../fonts/FontsFree-Net-times-new-roman.eot');
-  src: local('☺'),
-    url('../fonts/FontsFree-Net-times-new-roman.woff') format('woff'),
-    url('../fonts/FontsFree-Net-times-new-roman.ttf') format('truetype'),
-    url('../fonts/FontsFree-Net-times-new-roman.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*--Times New Roman - cyr bold--*/
-@font-face {
-  font-family: 'Times New Roman';
-  src: url('../fonts/FontsFree-Net-times-new-roman-bold.eot');
-  src: local('☺'),
-    url('../fonts/FontsFree-Net-times-new-roman-bold.woff') format('woff'),
-    url('../fonts/FontsFree-Net-times-new-roman-bold.ttf') format('truetype'),
-    url('../fonts/FontsFree-Net-times-new-roman-bold.svg') format('svg');
-  font-weight: 700;
-  font-style: normal;
-}
-
-/*--Film P3 - bold--*/
-@font-face {
-  font-family: 'Film P3';
-  src: url('../fonts/FontsFree-Net-FilmP3Bold.eot');
-  src: local('☺'), url('../fonts/FontsFree-Net-FilmP3Bold.woff') format('woff'),
-    url('../fonts/FontsFree-Net-FilmP3Bold.ttf') format('truetype'),
-    url('../fonts/FontsFree-Net-FilmP3Bold.svg') format('svg');
-  font-weight: 700;
-  font-style: normal;
-}

@@ -15,7 +15,7 @@
       @content;
     }
   } @else if $range == mobile-only {
-    @media screen and (min-width: $mobile) and (max-width: #{$tablet - 0.02}) {
+    @media screen and (min-width: $mobile) and (max-width: #{$tabletsd - 0.02}) {
       @content;
     }
   } @else if $range == mobile {
@@ -23,25 +23,27 @@
       @content;
     }
   } @else if $range == tablet-only {
-    @media screen and (min-width: $tablet) and (max-width: #{$desktop - 0.02}) {
+    @media screen and (min-width: $tabletsd) and (max-width: #{$desktopsd - 0.02}) {
       @content;
     }
-  } @else if $range == tablet {
-    @media screen and (min-width: $tablet) {
+  } @else if $range == tabletsd {
+    @media screen and (min-width: $tabletsd) {
       @content;
     }
-  } @else if $range == desktop {
-    @media screen and (min-width: $desktop) {
+  } @else if $range == tablethd {
+    @media screen and (min-width: $tablethd) {
       @content;
     }
-  } @else if $range == retina {
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
+  } @else if $range == desktopsd {
+    @media screen and (min-width: $desktopsd) {
+      @content;
+    }
+  } @else if $range == desktophd {
+    @media screen and (min-width: $desktophd) {
       @content;
     }
   } @else if $range == notDesktop {
-    @media screen and (max-width: #{$desktop - 0.02}) {
+    @media screen and (max-width: #{$desktopsd - 0.02}) {
       @content;
     }
   }

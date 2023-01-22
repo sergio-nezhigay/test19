@@ -3,20 +3,24 @@
 //============
 :root {
   --color-white: #ffffff;
-  --color-accent-yellow: #f3c653;
-
   --font-primary: 'Montserrat', sans-serif;
-  --font-secondary: 'Times New Roman', serif;
-  --font-logo: 'Film P3', sans-serif;
-  --animation: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
-  --padding-mobile: 15px;
+  --animation: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  --background-gradient: linear-gradient(
+    228.57deg,
+    #323264 11.93%,
+    #323264 57.17%,
+    #643e72 87.46%
+  );
+  --padding-mobile: 30px;
   --padding-tablet: 45px;
   --padding-desktop: 85px;
 }
 
 //BREAKPOINTS
 
-$mobile: 414px;
-$tablet: 1024px;
-$desktop: 1280px;
+$mobile: 375px;
+$tabletsd: 768px;
+$tablethd: 1024px;
+$desktopsd: 1440px;
+$desktophd: 1920px;
