@@ -2,7 +2,6 @@
 // Header
 //============
 .header {
-  position: relative;
   max-width: $mobile;
   margin: 0 auto;
   background: var(--background-gradient);
@@ -13,11 +12,15 @@
     line-height: 1.25;
   }
   &__row {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    background: rgba(245, 245, 250, 0.2);
+
+    &--grey {
+      background: rgba(245, 245, 250, 0.2);
+    }
   }
 }
 
