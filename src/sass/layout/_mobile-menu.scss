@@ -3,7 +3,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 0px;
+  right: 22px;
   width: 16px;
   height: 16px;
   background-color: transparent;
@@ -20,20 +20,14 @@
   background-color: #000;
   transform: scaleX(0%);
   transform-origin: right;
-  padding: 15% 60px;
+  padding: 120px 60px;
   transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
   &__list {
-    list-style-type: none;
-    &--copy {
-      @include for-size(desktop) {
-        display: none;
-      }
-    }
+    @extend %list;
   }
   &__link {
+    @extend %link;
     display: block;
-    font-family: 'D-DIN', sans-serif;
-    text-transform: uppercase;
     font-weight: 500;
     color: #fff;
     font-size: 16px;

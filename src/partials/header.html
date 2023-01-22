@@ -1,42 +1,42 @@
 <header class="header">
-  <div class="header__row header__row--grey">
-    <div class="radio_container">
-      <input type="radio" name="radio" id="ua" />
-      <label for="ua">УК</label>
-      <input type="radio" name="radio" id="ru" />
-      <label for="ru">РУ</label>
-      <input type="radio" name="radio" id="en" checked />
-      <label for="en">EN</label>
+  <div class="header__row header__row--first">
+    <div class="radio">
+      <input type="radio" name="radio" id="ua" class="radio__input" />
+      <label for="ua" class="radio__label">УК</label>
+      <input type="radio" name="radio" id="ru" class="radio__input" />
+      <label for="ru" class="radio__label">РУ</label>
+      <input type="radio" name="radio" id="en" checked class="radio__input" />
+      <label for="en" class="radio__label">EN</label>
     </div>
     <a href="tel:0800 211 927" class="header__phone">0800 211 927</a>
   </div>
-  <div class="container">
-    <div class="header__row">
-      <a href="./index.html">
-        <img
-          src="./images/logo.png"
-          alt="Logo"
-          width="69"
-          height="32"
-          class="logo image"
-        />
-      </a>
 
-      <button
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        area-label="Menu"
-        role="button"
-        area-haspopup="dialog"
-        id="nav-icon4"
-        class="js-open-menu hamburger"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+  <div class="header__row header__row--second">
+    <a href="./index.html">
+      <img
+        src="./images/logo.png"
+        alt="Logo"
+        width="69"
+        height="32"
+        class="logo image"
+      />
+    </a>
+
+    <button
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      area-label="Menu"
+      role="button"
+      area-haspopup="dialog"
+      id="nav-icon4"
+      class="js-open-menu hamburger"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+
   <div class="js-menu">
     <ul class="js-menu__list js-menu__list--copy">
       <li class="js-menu__item">

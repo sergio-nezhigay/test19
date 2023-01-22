@@ -5,11 +5,13 @@
   max-width: $mobile;
   width: 100vw;
   margin: 0 auto;
-
   position: absolute;
   z-index: 99;
   top: 0;
-  left: calc((100% - $mobile) / 2);
+  left: 0;
+  @include for-size(mobile) {
+    left: calc((100% - $mobile) / 2);
+  }
   &__phone {
     @extend %link;
     font-weight: 700;
@@ -18,55 +20,54 @@
   }
   &__row {
     position: relative;
+    // margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px;
 
-    &--grey {
+    &--first {
       background: rgba(245, 245, 250, 0.2);
+      padding: 10px 15px;
+    }
+    &--second {
+      padding: 15px;
     }
   }
 }
 
-.radio_container {
+.radio {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 99px;
   height: 25px;
-}
-
-input[type='radio'] {
-  appearance: none;
-  display: none;
-}
-
-label {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  letter-spacing: 1px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 33px;
-  height: 25px;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: inherit;
-  transition: background-color var(--animation);
-  color: var(--color-white);
-  &:hover {
-    cursor: pointer;
+  &__input {
+    appearance: none;
+    display: none;
+    &:checked + label {
+      background-color: #f0145a;
+    }
   }
-}
-
-input[type='radio']:checked + label {
-  background-color: #f0145a;
-  // transition: 0.3s;
+  &__label {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33px;
+    height: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: inherit;
+    transition: background-color var(--animation);
+    color: var(--color-white);
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .logo {
