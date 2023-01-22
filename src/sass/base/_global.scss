@@ -20,9 +20,13 @@
     padding: 0 var(--padding-tablet);
     max-width: $tablethd;
   }
-  @include for-size(desktop) {
-    padding: 0 var(--padding-desktop);
-    max-width: $desktop;
+  @include for-size(desktopsd) {
+    padding: 0 var(--padding-desktopsd);
+    max-width: $desktopsd;
+  }
+  @include for-size(desktophd) {
+    padding: 0 var(--padding-desktophd);
+    max-width: $desktophd;
   }
   &__rest-about {
     position: relative;
@@ -76,5 +80,14 @@ main {
   }
   @include for-size(tablethd) {
     width: $tablethd;
+    max-width: $tablethd;
+  }
+  @include for-size(desktopsd) {
+    width: $desktopsd;
+    max-width: $desktopsd;
+  }
+  @include for-size(desktophd) {
+    width: $desktophd;
+    max-width: $desktophd;
   }
 }
