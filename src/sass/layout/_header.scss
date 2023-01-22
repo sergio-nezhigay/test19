@@ -2,7 +2,6 @@
 // Header
 //============
 .header {
-  max-width: $mobile;
   width: 100vw;
   margin: 0 auto;
   position: absolute;
@@ -21,17 +20,30 @@
   &__row {
     position: relative;
     // margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     &--first {
       background: rgba(245, 245, 250, 0.2);
-      padding: 10px 15px;
+      padding: 10px 0;
     }
     &--second {
       padding: 15px;
+      justify-content: start;
     }
+  }
+  &__contacts-list {
+    @extend %list;
+  }
+  &__link {
+    display: none;
+    @include for-size(tabletsd) {
+      display: block;
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc(var(--padding-mobile) / 2);
   }
 }
 

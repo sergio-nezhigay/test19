@@ -12,9 +12,13 @@
   @include for-size(mobile) {
     max-width: $mobile;
   }
-  @include for-size(tablet) {
+  @include for-size(tabletsd) {
     padding: 0 var(--padding-tablet);
-    max-width: $tablet;
+    max-width: $tabletsd;
+  }
+  @include for-size(tablethd) {
+    padding: 0 var(--padding-tablet);
+    max-width: $tablethd;
   }
   @include for-size(desktop) {
     padding: 0 var(--padding-desktop);
@@ -27,7 +31,7 @@
 
 body {
   color: var(--color-white);
-  background: rgb(224, 224, 224);
+  background: rgb(204, 194, 240);
   font-family: var(--font-primary);
   letter-spacing: 0.03em;
   font-size: var(--font-primary-size);
@@ -42,6 +46,11 @@ main {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.icon {
+  display: block;
+  fill: currentColor;
 }
 
 .visually-hidden {
@@ -60,4 +69,12 @@ main {
 .section {
   max-width: $mobile;
   margin: 0 auto;
+  @include for-size(tabletsd) {
+    padding: 0 var(--padding-tablet);
+    width: $tabletsd;
+  }
+  @include for-size(tablethd) {
+    padding: 0 var(--padding-tablet);
+    width: $tablethd;
+  }
 }
