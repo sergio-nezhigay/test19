@@ -2,6 +2,7 @@
 // Header
 //============
 .header {
+  position: relative;
   max-width: $mobile;
   margin: 0 auto;
   background: var(--background-gradient);
@@ -58,4 +59,8 @@ label {
 input[type='radio']:checked + label {
   background-color: #f0145a;
   // transition: 0.3s;
+}
+
+.logo {
+  width: 69px;
 }
