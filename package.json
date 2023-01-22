@@ -2,20 +2,20 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://sergio-nezhigay.github.io/team3",
+  "homepage": "https://sergio-nezhigay.github.io/legal",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /team3/"
+    "build": "parcel build src/*.html --public-url /legal/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergio-nezhigay/team3.git"
+    "url": "git+https://github.com/sergio-nezhigay/legal.git"
   },
   "keywords": [],
   "author": "Sergey N",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sergio-nezhigay/team3/issues"
+    "url": "https://github.com/sergio-nezhigay/legal/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
