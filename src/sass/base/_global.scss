@@ -5,7 +5,7 @@
 .container {
   margin: 0 auto;
   padding: 0 var(--padding-mobile);
-  outline: 1px dotted rgba(105, 20, 216, 0.726);
+  // outline: 1px dotted rgba(105, 20, 216, 0.726);
   @media screen and (max-width: $mobile) {
     max-width: 100vw;
   }
@@ -73,7 +73,7 @@ main {
 .section {
   max-width: $mobile;
   margin: 0 auto;
-  outline: 1px dotted grey;
+  // outline: 1px dotted grey;
   @include for-size(tabletsd) {
     width: $tabletsd;
     max-width: $tabletsd;
