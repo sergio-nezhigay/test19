@@ -12,17 +12,27 @@
     left: calc((100% - $mobile) / 2);
   }
   @include for-size(tabletsd) {
+    top: 40px;
     left: calc((100% - $tabletsd) / 2);
+  }
+  @include for-size(tablethd) {
+    left: calc((100% - $tablethd) / 2);
   }
   &__row {
     position: relative;
     &--first {
       background: rgba(245, 245, 250, 0.2);
       padding: 10px 0;
+      @include for-size(tabletsd) {
+        background: inherit;
+      }
     }
     &--second {
       padding: 15px 0;
       justify-content: start;
+      @include for-size(tabletsd) {
+        padding: 20px 0;
+      }
     }
   }
   &__contacts-list {
@@ -30,22 +40,34 @@
     display: flex;
     align-items: center;
     @include for-size(tabletsd) {
-      gap: 6px;
-      list-style: inside;
+      gap: 11px;
     }
   }
 
   &__link {
     display: none;
     @extend %link;
+    position: relative;
     @include for-size(tabletsd) {
-      display: inline-block;
-      margin-left: -10px;
+      display: block;
+      margin-left: 0px;
+      padding-left: 15px;
+      &::before {
+        @include pseudo;
+        width: 6px;
+        height: 6px;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--color-white);
+        border-radius: 50%;
+      }
     }
     &--grey {
       color: #b3b3ba;
     }
-    &--bold {
+    &--phone {
+      display: block;
       font-weight: 700;
       font-size: 16px;
       line-height: 1.25;
@@ -56,6 +78,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 calc(var(--padding-mobile) / 2);
+    @include for-size(tabletsd) {
+      gap: 6px;
+      justify-content: flex-start;
+      padding: 0 var(--padding-tablet);
+    }
   }
 }
 

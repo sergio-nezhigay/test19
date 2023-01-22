@@ -9,6 +9,9 @@
   background-color: transparent;
   border: none;
   z-index: 99;
+  @include for-size(tabletsd) {
+    display: none;
+  }
 }
 
 .js-menu {

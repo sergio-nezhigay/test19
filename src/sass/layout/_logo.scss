@@ -1,1 +1,6 @@
-
+.logo {
+  @include for-size(tabletsd) {
+    width: 130px;
+    height: 60px;
+  }
+}

@@ -71,12 +71,10 @@ main {
   margin: 0 auto;
   outline: 1px dotted grey;
   @include for-size(tabletsd) {
-    padding: 0 var(--padding-tablet);
     width: $tabletsd;
     max-width: $tabletsd;
   }
   @include for-size(tablethd) {
-    padding: 0 var(--padding-tablet);
     width: $tablethd;
   }
 }
