@@ -2,32 +2,36 @@
 // Header
 //============
 .header {
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   position: absolute;
   z-index: 99;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   @include for-size(mobile) {
-    left: calc((100% - $mobile) / 2);
+    width: 100%;
   }
   @include for-size(tabletsd) {
     top: 40px;
-    left: calc((100% - $tabletsd) / 2);
+    // width: $tabletsd;
+    // left: calc((100% - $tabletsd) / 2);
   }
   @include for-size(tablethd) {
     top: 50px;
-    left: calc((100% - $tablethd) / 2);
+    // width: $tablethd;
+    // left: calc((100% - $tablethd) / 2);
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 130px auto;
     justify-content: space-between;
   }
   @include for-size(desktopsd) {
-    left: calc((100% - $desktopsd) / 2);
+    width: $desktopsd;
+    // left: calc((100% - $desktopsd) / 2);
   }
   @include for-size(desktophd) {
-    left: calc((100% - $desktophd) / 2);
+    // left: calc((100% - $desktophd) / 2);
   }
   &__row {
     position: relative;

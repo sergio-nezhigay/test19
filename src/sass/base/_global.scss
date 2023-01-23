@@ -5,37 +5,23 @@
 .container {
   margin: 0 auto;
   padding: 0 var(--padding-mobile);
-  // outline: 1px dotted rgba(105, 20, 216, 0.726);
-  @media screen and (max-width: $mobile) {
-    max-width: 100vw;
-  }
-  @include for-size(mobile) {
-    max-width: $mobile;
-  }
   @include for-size(tabletsd) {
     padding: 0 var(--padding-tablet);
-    max-width: $tabletsd;
   }
   @include for-size(tablethd) {
     padding: 0 var(--padding-tablet);
-    max-width: $tablethd;
   }
   @include for-size(desktopsd) {
     padding: 0 var(--padding-desktopsd);
-    max-width: $desktopsd;
   }
   @include for-size(desktophd) {
     padding: 0 var(--padding-desktophd);
-    max-width: $desktophd;
-  }
-  &__rest-about {
-    position: relative;
   }
 }
 
 body {
   color: var(--color-white);
-  background: rgb(204, 194, 240);
+  background: #e5e5e5;
   font-family: var(--font-primary);
   letter-spacing: 0.03em;
   font-size: var(--font-primary-size);
@@ -71,23 +57,5 @@ main {
 }
 
 .section {
-  max-width: $mobile;
   margin: 0 auto;
-  // outline: 1px dotted grey;
-  @include for-size(tabletsd) {
-    width: $tabletsd;
-    max-width: $tabletsd;
-  }
-  @include for-size(tablethd) {
-    width: $tablethd;
-    max-width: $tablethd;
-  }
-  @include for-size(desktopsd) {
-    width: $desktopsd;
-    max-width: $desktopsd;
-  }
-  @include for-size(desktophd) {
-    width: $desktophd;
-    max-width: $desktophd;
-  }
 }
