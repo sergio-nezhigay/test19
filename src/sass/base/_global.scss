@@ -5,6 +5,7 @@
 .container {
   margin: 0 auto;
   padding: 0 var(--padding-mobile);
+  outline: 1px dotted grey;
   @include for-size(tabletsd) {
     padding: 0 var(--padding-tablet);
   }
