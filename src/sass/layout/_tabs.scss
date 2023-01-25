@@ -1,22 +1,42 @@
 .mytab {
   position: relative;
   padding-top: 30px;
-  &::before {
-    @include pseudo;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include for-size(tabletsd) {
+    padding-top: 60px;
+    gap: 60px;
+  }
+  @include for-size(tablethd) {
+    flex-direction: row;
   }
   &__list {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    // width: 100%;
     overflow-x: auto;
-    margin-bottom: 64px;
+
+    @include for-size(tabletsd) {
+    }
+    @include for-size(tablethd) {
+      flex-direction: column;
+
+      margin-bottom: 0;
+    }
+
     &::-webkit-scrollbar {
       display: none; /*Safari and Chrome*/
+    }
+  }
+  &__line {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+    @include for-size(tablethd) {
+      width: 4px;
+      height: 250px;
     }
   }
   &__link {
@@ -24,6 +44,9 @@
     font-size: 30px;
     line-height: 1.23;
     color: var(--color-grey-text);
+    @include for-size(tabletsd) {
+      font-size: 38px;
+    }
     &:hover,
     .active & {
       color: var(--color-accent);
@@ -37,6 +60,10 @@
     font-size: 20px;
     line-height: 1.2;
     margin-bottom: 30px;
+    position: relative;
+    @include for-size(tabletsd) {
+      font-size: 30px;
+    }
   }
   &__text {
     font-weight: 400;
