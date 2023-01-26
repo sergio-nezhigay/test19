@@ -23,7 +23,7 @@
     }
     @include for-size(tablethd) {
       flex-direction: column;
-
+      justify-content: start;
       margin-bottom: 0;
     }
 
@@ -38,7 +38,7 @@
     flex-shrink: 0;
     @include for-size(tablethd) {
       width: 4px;
-      height: 250px;
+      height: 100%;
     }
   }
   &__link {
@@ -77,6 +77,11 @@
   }
 }
 
+// overwriting bootstrap
 .nav > li > a {
   padding: 0;
+}
+
+.mytab__list::before {
+  content: none;
 }
