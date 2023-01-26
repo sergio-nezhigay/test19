@@ -1,0 +1,18 @@
+.services {
+  padding-top: 30px;
+  &__title {
+    @include red-text;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+  }
+  &__subtitle {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-active-regular);
+    margin-bottom: 10px;
+  }
+}
