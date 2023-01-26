@@ -1,12 +1,20 @@
 .services {
   padding-top: 30px;
-  padding-bottom: 200px;
+  padding-bottom: 60px;
+  @include for-size(tabletsd) {
+    padding-top: 60px;
+  }
   &__title {
     @include red-text;
     font-weight: 700;
     font-size: 30px;
-    line-height: 37px;
+    line-height: 1.23;
     margin-bottom: 30px;
+    @include for-size(tabletsd) {
+      font-size: 38px;
+      line-height: 1.21;
+      margin-bottom: 60px;
+    }
   }
   &__subtitle {
     font-weight: 700;
@@ -19,9 +27,15 @@
     gap: 2px;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     width: fit-content; /*  didn't khow how to make block less than 100% */
     color: var(--color-active-regular);
+    transition: color var(--animation);
+    &:hover,
+    &:active {
+      color: var(--color-accent);
+      cursor: pointer;
+    }
   }
   &__icon {
     width: 12px;
@@ -29,11 +43,22 @@
     stroke: currentColor;
     fill: transparent;
   }
-  &__wrapper-white {
+  &__image {
     margin-bottom: 30px;
   }
   &__list {
     @extend %list;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    @include for-size(tabletsd) {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    @include for-size(tablethd) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+    }
   }
   &__name {
     font-weight: 700;
