@@ -9,11 +9,13 @@
     gap: 60px;
   }
   @include for-size(tablethd) {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
   }
   &__list {
     display: flex;
     flex-direction: row;
+    gap: 30px;
     // width: 100%;
     overflow-x: auto;
 
@@ -47,6 +49,9 @@
     @include for-size(tabletsd) {
       font-size: 38px;
     }
+    @include for-size(tablethd) {
+      padding: 0;
+    }
     &:hover,
     .active & {
       color: var(--color-accent);
@@ -70,4 +75,8 @@
     font-size: 19px;
     line-height: 1.57;
   }
+}
+
+.nav > li > a {
+  padding: 0;
 }
