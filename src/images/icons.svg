@@ -70,5 +70,8 @@
 <symbol id="icon-arrow" viewBox="0 0 30 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="4.9231" d="M8.615 4.923l11.077 11.077-11.077 11.077"></path>
 </symbol>
+<symbol id="icon-arrow2" viewBox="0 0 30 32">
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="4.9231" d="M6.95 1.923l14.077 14.077-14.077 14.077"></path>
+</symbol>
 </defs>
 </svg>
