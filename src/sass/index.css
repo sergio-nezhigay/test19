@@ -2,9 +2,9 @@
 :root {
   --color-white: #ffffff;
   --color-accent-yellow: #f3c653;
-  --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Times New Roman", serif;
-  --font-logo: "Film P3", sans-serif;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Times New Roman', serif;
+  --font-logo: 'Film P3', sans-serif;
   --animation: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   --padding-mobile: 15px;
   --padding-tablet: 45px;
@@ -19,7 +19,7 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  content: "Small";
+  content: 'Small';
   font-family: sans-serif;
   letter-spacing: 0.05rem;
   color: #fff;
@@ -29,31 +29,52 @@
 }
 @media (min-width: 1024px) {
   .debug:before {
-    content: "medium";
+    content: 'medium';
   }
 }
 @media (min-width: 1440px) {
   .debug:before {
-    content: "large";
+    content: 'large';
   }
 }
 @media (min-width: 1920px) {
   .debug:before {
-    content: "xlarge";
+    content: 'xlarge';
   }
 }
 
-.map__iframe-link, .map__tel-link, .address, .logo, .footer__link, .header__tel, .header__tel-link, .header__link {
+.map__iframe-link,
+.map__tel-link,
+.address,
+.logo,
+.footer__link,
+.header__tel,
+.header__tel-link,
+.header__link {
   text-decoration: none;
   color: inherit;
 }
 
-.map__tel-list, .map__list, .swiper-wrapper, .socials, .footer__socials, .footer__list, .header__tel-list, .header__list {
+.map__tel-list,
+.map__list,
+.swiper-wrapper,
+.socials,
+.footer__socials,
+.footer__list,
+.header__tel-list,
+.header__list {
   margin: 0;
   padding: 0;
 }
 
-.map__tel-list, .map__list, .swiper-wrapper, .socials, .footer__socials, .footer__list, .header__tel-list, .header__list {
+.map__tel-list,
+.map__list,
+.swiper-wrapper,
+.socials,
+.footer__socials,
+.footer__list,
+.header__tel-list,
+.header__list {
   list-style: none;
 }
 
@@ -73,7 +94,7 @@
 html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
 }
 
 html {
@@ -86,7 +107,8 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
 
 hr {
@@ -96,7 +118,7 @@ hr {
 
 abbr[title] {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -108,7 +130,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    monospace;
   font-size: 1em;
 }
 
@@ -153,9 +176,9 @@ select {
   text-transform: none;
 }
 
-[type=button],
-[type=reset],
-[type=submit],
+[type='button'],
+[type='reset'],
+[type='submit'],
 button {
   -webkit-appearance: button;
 }
@@ -186,7 +209,7 @@ progress {
   height: auto;
 }
 
-[type=search] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -205,34 +228,34 @@ summary {
 }
 
 /*# sourceMappingURL=/sm/b8ae781793ee4eb86edef3f2a2ac43a5575d063ed8cd287d7553f9f1b2776616.map */
-.container {
+.wrapper {
   margin: 0 auto;
   padding: 0 var(--padding-mobile);
   outline: 1px dotted rgba(105, 20, 216, 0.726);
 }
 @media screen and (max-width: 414px) {
-  .container {
+  .wrapper {
     max-width: 100vw;
   }
 }
 @media screen and (min-width: 414px) {
-  .container {
+  .wrapper {
     max-width: 414px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .container {
+  .wrapper {
     padding: 0 var(--padding-tablet);
     max-width: 1024px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .container {
+  .wrapper {
     padding: 0 var(--padding-desktop);
     max-width: 1280px;
   }
 }
-.container__rest-about {
+.wrapper__rest-about {
   position: relative;
 }
 
@@ -261,7 +284,7 @@ body {
   padding: 0;
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   margin: -1px;
 }
 
@@ -434,65 +457,101 @@ body {
 
 /* montserrat-regular - latin_cyrillic */
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/montserrat-v25-latin_cyrillic-regular.eot");
+  src: url('../fonts/montserrat-v25-latin_cyrillic-regular.eot');
   /* IE9 Compat Modes */
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff") format("woff"), url("../fonts/montserrat-v25-latin_cyrillic-regular.ttf") format("truetype"), url("../fonts/montserrat-v25-latin_cyrillic-regular.svg#Montserrat") format("svg");
+  src: local(''),
+    url('../fonts/montserrat-v25-latin_cyrillic-regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-regular.woff2') format('woff2'),
+    url('../fonts/montserrat-v25-latin_cyrillic-regular.woff') format('woff'),
+    url('../fonts/montserrat-v25-latin_cyrillic-regular.ttf') format('truetype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-regular.svg#Montserrat')
+      format('svg');
   /* Legacy iOS */
 }
 /* montserrat-500 - latin_cyrillic */
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/montserrat-v25-latin_cyrillic-500.eot");
+  src: url('../fonts/montserrat-v25-latin_cyrillic-500.eot');
   /* IE9 Compat Modes */
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-500.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v25-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-500.woff") format("woff"), url("../fonts/montserrat-v25-latin_cyrillic-500.ttf") format("truetype"), url("../fonts/montserrat-v25-latin_cyrillic-500.svg#Montserrat") format("svg");
+  src: local(''),
+    url('../fonts/montserrat-v25-latin_cyrillic-500.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-500.woff2') format('woff2'),
+    url('../fonts/montserrat-v25-latin_cyrillic-500.woff') format('woff'),
+    url('../fonts/montserrat-v25-latin_cyrillic-500.ttf') format('truetype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-500.svg#Montserrat')
+      format('svg');
   /* Legacy iOS */
 }
 /* montserrat-600 - latin_cyrillic */
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/montserrat-v25-latin_cyrillic-600.eot");
+  src: url('../fonts/montserrat-v25-latin_cyrillic-600.eot');
   /* IE9 Compat Modes */
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-600.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v25-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-600.woff") format("woff"), url("../fonts/montserrat-v25-latin_cyrillic-600.ttf") format("truetype"), url("../fonts/montserrat-v25-latin_cyrillic-600.svg#Montserrat") format("svg");
+  src: local(''),
+    url('../fonts/montserrat-v25-latin_cyrillic-600.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-600.woff2') format('woff2'),
+    url('../fonts/montserrat-v25-latin_cyrillic-600.woff') format('woff'),
+    url('../fonts/montserrat-v25-latin_cyrillic-600.ttf') format('truetype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-600.svg#Montserrat')
+      format('svg');
   /* Legacy iOS */
 }
 /* montserrat-700 - latin_cyrillic */
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/montserrat-v25-latin_cyrillic-700.eot");
+  src: url('../fonts/montserrat-v25-latin_cyrillic-700.eot');
   /* IE9 Compat Modes */
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-700.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v25-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-700.woff") format("woff"), url("../fonts/montserrat-v25-latin_cyrillic-700.ttf") format("truetype"), url("../fonts/montserrat-v25-latin_cyrillic-700.svg#Montserrat") format("svg");
+  src: local(''),
+    url('../fonts/montserrat-v25-latin_cyrillic-700.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-700.woff2') format('woff2'),
+    url('../fonts/montserrat-v25-latin_cyrillic-700.woff') format('woff'),
+    url('../fonts/montserrat-v25-latin_cyrillic-700.ttf') format('truetype'),
+    url('../fonts/montserrat-v25-latin_cyrillic-700.svg#Montserrat')
+      format('svg');
   /* Legacy iOS */
 }
 /*--Times New Roman - cyr normal--*/
 @font-face {
-  font-family: "Times New Roman";
-  src: url("../fonts/FontsFree-Net-times-new-roman.eot");
-  src: local("☺"), url("../fonts/FontsFree-Net-times-new-roman.woff") format("woff"), url("../fonts/FontsFree-Net-times-new-roman.ttf") format("truetype"), url("../fonts/FontsFree-Net-times-new-roman.svg") format("svg");
+  font-family: 'Times New Roman';
+  src: url('../fonts/FontsFree-Net-times-new-roman.eot');
+  src: local('☺'),
+    url('../fonts/FontsFree-Net-times-new-roman.woff') format('woff'),
+    url('../fonts/FontsFree-Net-times-new-roman.ttf') format('truetype'),
+    url('../fonts/FontsFree-Net-times-new-roman.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 /*--Times New Roman - cyr bold--*/
 @font-face {
-  font-family: "Times New Roman";
-  src: url("../fonts/FontsFree-Net-times-new-roman-bold.eot");
-  src: local("☺"), url("../fonts/FontsFree-Net-times-new-roman-bold.woff") format("woff"), url("../fonts/FontsFree-Net-times-new-roman-bold.ttf") format("truetype"), url("../fonts/FontsFree-Net-times-new-roman-bold.svg") format("svg");
+  font-family: 'Times New Roman';
+  src: url('../fonts/FontsFree-Net-times-new-roman-bold.eot');
+  src: local('☺'),
+    url('../fonts/FontsFree-Net-times-new-roman-bold.woff') format('woff'),
+    url('../fonts/FontsFree-Net-times-new-roman-bold.ttf') format('truetype'),
+    url('../fonts/FontsFree-Net-times-new-roman-bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
 /*--Film P3 - bold--*/
 @font-face {
-  font-family: "Film P3";
-  src: url("../fonts/FontsFree-Net-FilmP3Bold.eot");
-  src: local("☺"), url("../fonts/FontsFree-Net-FilmP3Bold.woff") format("woff"), url("../fonts/FontsFree-Net-FilmP3Bold.ttf") format("truetype"), url("../fonts/FontsFree-Net-FilmP3Bold.svg") format("svg");
+  font-family: 'Film P3';
+  src: url('../fonts/FontsFree-Net-FilmP3Bold.eot');
+  src: local('☺'), url('../fonts/FontsFree-Net-FilmP3Bold.woff') format('woff'),
+    url('../fonts/FontsFree-Net-FilmP3Bold.ttf') format('truetype'),
+    url('../fonts/FontsFree-Net-FilmP3Bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
@@ -598,7 +657,7 @@ img {
   padding: 40px 0;
   color: var(--color-accent-yellow);
 }
-.footer__container {
+.footer__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -782,58 +841,58 @@ img {
   margin-top: 0;
 }
 
-section[data-slider=basic] .swiper-slide {
+section[data-slider='basic'] .swiper-slide {
   width: 245px;
 }
 @media screen and (min-width: 1024px) {
-  section[data-slider=basic] .swiper-slide {
+  section[data-slider='basic'] .swiper-slide {
     width: 194px;
   }
 }
 @media screen and (min-width: 1280px) {
-  section[data-slider=basic] .swiper-slide {
+  section[data-slider='basic'] .swiper-slide {
     width: 254px;
   }
 }
 
-section[data-slider=dark] .swiper-slide {
+section[data-slider='dark'] .swiper-slide {
   height: 100%;
   width: 274px;
 }
 @media screen and (min-width: 1024px) {
-  section[data-slider=dark] .swiper-slide {
+  section[data-slider='dark'] .swiper-slide {
     width: 270px;
   }
 }
 
-section[data-slider=basic] .swiper-container-out {
+section[data-slider='basic'] .swiper-wrapper-out {
   overflow-x: hidden;
   padding: 60px;
   outline: 1px dotted red;
 }
 @media screen and (min-width: 1024px) {
-  section[data-slider=basic] .swiper-container-out {
+  section[data-slider='basic'] .swiper-wrapper-out {
     margin-top: -120px;
     width: 58%;
   }
 }
 @media screen and (min-width: 1280px) {
-  section[data-slider=basic] .swiper-container-out {
+  section[data-slider='basic'] .swiper-wrapper-out {
     width: 62%;
   }
 }
 
-section[data-slider=dark] .swiper-container-out {
+section[data-slider='dark'] .swiper-wrapper-out {
   overflow: hidden;
   outline: 1px dotted red;
 }
 @media screen and (min-width: 1024px) {
-  section[data-slider=dark] .swiper-container-out {
+  section[data-slider='dark'] .swiper-wrapper-out {
     width: 68%;
   }
 }
 @media screen and (min-width: 1280px) {
-  section[data-slider=dark] .swiper-container-out {
+  section[data-slider='dark'] .swiper-wrapper-out {
     width: 72%;
   }
 }
@@ -842,11 +901,11 @@ section[data-slider=dark] .swiper-container-out {
   height: 100%;
 }
 
-section[data-slider=basic] .swiper-slide {
+section[data-slider='basic'] .swiper-slide {
   box-shadow: 2px 2px 60px 2px rgba(0, 0, 0, 0.25);
 }
 
-.swiper-container-out .swiper-slide {
+.swiper-wrapper-out .swiper-slide {
   visibility: hidden;
   border-radius: 2px;
 }
@@ -885,7 +944,7 @@ section[data-slider=basic] .swiper-slide {
 }
 
 @media screen and (min-width: 1024px) {
-  section[data-slider=dark] .swiper-slide-prev {
+  section[data-slider='dark'] .swiper-slide-prev {
     visibility: visible;
   }
 }
@@ -1041,99 +1100,159 @@ section[data-slider=basic] .swiper-slide {
 }
 .hero__home {
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/mobile/hero-mob.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(../images//hero/home/mobile/hero-mob.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-@supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+@supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/mobile/hero-mob.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/mobile/hero-mob.webp);
   }
 }
-@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/mobile/hero-mob@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/mobile/hero-mob@2x.jpg);
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/mobile/hero-mob@2x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/mobile/hero-mob@2x.webp);
     }
   }
 }
-@media (min-device-pixel-ratio: 3), screen and (-webkit-min-device-pixel-ratio: 3), screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
+@media (min-device-pixel-ratio: 3),
+  screen and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-resolution: 288dpi),
+  screen and (min-resolution: 3dppx) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/mobile/hero-mob@3x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/mobile/hero-mob@3x.jpg);
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/mobile/hero-mob@3x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/mobile/hero-mob@3x.webp);
     }
   }
 }
 @media screen and (min-width: 1024px) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/tablet/hero-tab.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/tablet/hero-tab.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/tablet/hero-tab.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/tablet/hero-tab.webp);
     }
   }
 }
-@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1024px) and (min-resolution: 192dpi),
+  screen and (min-width: 1024px) and (min-resolution: 2dppx) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/tablet/hero-tab@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/tablet/hero-tab@2x.jpg);
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/tablet/hero-tab@2x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/tablet/hero-tab@2x.webp);
     }
   }
 }
-@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 3), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 3), screen and (min-width: 1024px) and (min-resolution: 288dpi), screen and (min-width: 1024px) and (min-resolution: 3dppx) {
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 1024px) and (min-resolution: 288dpi),
+  screen and (min-width: 1024px) and (min-resolution: 3dppx) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/tablet/hero-tab@3x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/tablet/hero-tab@3x.jpg);
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/tablet/hero-tab@3x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/tablet/hero-tab@3x.webp);
     }
   }
 }
 @media screen and (min-width: 1280px) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/desktop/hero-desk.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/desktop/hero-desk.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/desktop/hero-desk.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/desktop/hero-desk.webp);
     }
   }
 }
-@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (min-resolution: 192dpi),
+  screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/desktop/hero-desk@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/desktop/hero-desk@2x.jpg);
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/desktop/hero-desk@2x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/desktop/hero-desk@2x.webp);
     }
   }
 }
-@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 3), screen and (min-width: 1280px) and (min-resolution: 288dpi), screen and (min-width: 1280px) and (min-resolution: 3dppx) {
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (min-resolution: 288dpi),
+  screen and (min-width: 1280px) and (min-resolution: 3dppx) {
   .hero__home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/desktop/hero-desk@3x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//hero/home/desktop/hero-desk@3x.jpg);
   }
-  @supports (background: url("../images/hero/home/desktop/hero-desk.webp")) {
+  @supports (background: url('../images/hero/home/desktop/hero-desk.webp')) {
     .hero__home {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//hero/home/desktop/hero-desk@3x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//hero/home/desktop/hero-desk@3x.webp);
     }
   }
 }
@@ -1249,99 +1368,186 @@ section[data-slider=basic] .swiper-slide {
 }
 
 .rest-details {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/mobile/background-mob.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(../images//home/restaurant-details/mobile/background-mob.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-@supports (background: url("../images/home/restaurant-details/mobile/background-mob.webp")) {
+@supports (
+  background:
+    url('../images/home/restaurant-details/mobile/background-mob.webp')
+) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/mobile/background-mob.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/mobile/background-mob.webp);
   }
 }
-@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/mobile/background-mob@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/mobile/background-mob@2x.jpg);
   }
-  @supports (background: url("../images/home/restaurant-details/mobile/background-mob.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/mobile/background-mob.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/mobile/background-mob@2x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/mobile/background-mob@2x.webp);
     }
   }
 }
-@media (min-device-pixel-ratio: 3), screen and (-webkit-min-device-pixel-ratio: 3), screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
+@media (min-device-pixel-ratio: 3),
+  screen and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-resolution: 288dpi),
+  screen and (min-resolution: 3dppx) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/mobile/background-mob@3x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/mobile/background-mob@3x.jpg);
   }
-  @supports (background: url("../images/home/restaurant-details/mobile/background-mob.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/mobile/background-mob.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/mobile/background-mob@3x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/mobile/background-mob@3x.webp);
     }
   }
 }
 @media screen and (min-width: 1024px) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/tablet/background-tab.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/tablet/background-tab.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-  @supports (background: url("../images/home/restaurant-details/tablet/background-tab.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/tablet/background-tab.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/tablet/background-tab.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/tablet/background-tab.webp);
     }
   }
 }
-@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1024px) and (min-resolution: 192dpi),
+  screen and (min-width: 1024px) and (min-resolution: 2dppx) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/tablet/background-tab@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/tablet/background-tab@2x.jpg);
   }
-  @supports (background: url("../images/home/restaurant-details/tablet/background-tab.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/tablet/background-tab.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/tablet/background-tab@2x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/tablet/background-tab@2x.webp);
     }
   }
 }
-@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 3), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 3), screen and (min-width: 1024px) and (min-resolution: 288dpi), screen and (min-width: 1024px) and (min-resolution: 3dppx) {
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 1024px) and (min-resolution: 288dpi),
+  screen and (min-width: 1024px) and (min-resolution: 3dppx) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/tablet/background-tab@3x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/tablet/background-tab@3x.jpg);
   }
-  @supports (background: url("../images/home/restaurant-details/tablet/background-tab.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/tablet/background-tab.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/tablet/background-tab@3x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/tablet/background-tab@3x.webp);
     }
   }
 }
 @media screen and (min-width: 1280px) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/desktop/background-desk.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/desktop/background-desk.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-  @supports (background: url("../images/home/restaurant-details/desktop/background-desk.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/desktop/background-desk.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/desktop/background-desk.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/desktop/background-desk.webp);
     }
   }
 }
-@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1280px) and (min-resolution: 192dpi),
+  screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/desktop/background-desk@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/desktop/background-desk@2x.jpg);
   }
-  @supports (background: url("../images/home/restaurant-details/desktop/background-desk.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/desktop/background-desk.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/desktop/background-desk@2x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/desktop/background-desk@2x.webp);
     }
   }
 }
-@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 3), screen and (min-width: 1280px) and (min-resolution: 288dpi), screen and (min-width: 1280px) and (min-resolution: 3dppx) {
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (min-width: 1280px) and (min-resolution: 288dpi),
+  screen and (min-width: 1280px) and (min-resolution: 3dppx) {
   .rest-details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/desktop/background-desk@3x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images//home/restaurant-details/desktop/background-desk@3x.jpg);
   }
-  @supports (background: url("../images/home/restaurant-details/desktop/background-desk.webp")) {
+  @supports (
+    background:
+      url('../images/home/restaurant-details/desktop/background-desk.webp')
+  ) {
     .rest-details {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images//home/restaurant-details/desktop/background-desk@3x.webp);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url(../images//home/restaurant-details/desktop/background-desk@3x.webp);
     }
   }
 }
@@ -1454,9 +1660,9 @@ section[data-slider=basic] .swiper-slide {
   }
 }
 @media screen and (min-width: 1024px) {
-  .map__container {
+  .map__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
