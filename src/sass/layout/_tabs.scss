@@ -50,6 +50,7 @@
     font-size: 30px;
     line-height: 1.23;
     color: var(--color-grey-text);
+    background-color: transparent;
     @include for-size(tabletsd) {
       font-size: 38px;
     }
@@ -86,6 +87,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 581px;
   }
 }
 
@@ -94,6 +96,7 @@
   padding: 0;
 }
 
-.mytab__list::before {
+.mytab__list::before,
+.mytab__list::after {
   content: none;
 }
