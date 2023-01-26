@@ -10,7 +10,10 @@
   }
   @include for-size(tablethd) {
     display: grid;
-    grid-template-columns: 1fr 10px 1fr;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  @include for-size(desktopsd) {
+    grid-template-columns: 2fr auto 3fr;
   }
   &__list {
     display: flex;
@@ -24,6 +27,7 @@
     @include for-size(tablethd) {
       flex-direction: column;
       justify-content: start;
+      align-items: flex-end;
       margin-bottom: 0;
     }
 
@@ -74,6 +78,14 @@
     font-weight: 400;
     font-size: 19px;
     line-height: 1.57;
+  }
+}
+
+.tab-content {
+  @include for-size(tablethd) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
