@@ -1,4 +1,4 @@
-.mytab {
+.tab {
   position: relative;
   padding-top: 30px;
   display: flex;
@@ -16,6 +16,8 @@
     grid-template-columns: 2fr auto 3fr;
   }
   &__list {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -51,6 +53,7 @@
     line-height: 1.23;
     color: var(--color-grey-text);
     background-color: transparent;
+    transition: color var(--animation);
     @include for-size(tabletsd) {
       font-size: 38px;
     }
@@ -80,6 +83,9 @@
     font-size: 19px;
     line-height: 1.57;
   }
+  @include for-size(tabletsd) {
+    font-size: 30px;
+  }
 }
 
 .tab-content {
@@ -87,16 +93,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 405px;
+  }
+  @include for-size(desktopsd) {
     max-width: 581px;
+  }
+  @include for-size(desktophd) {
+    max-width: 861px;
   }
 }
 
-// overwriting bootstrap
-.nav > li > a {
+overwriting bootstrap .nav > li > a {
   padding: 0;
-}
-
-.mytab__list::before,
-.mytab__list::after {
-  content: none;
 }
