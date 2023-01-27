@@ -10,7 +10,7 @@
       openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
       mobileMenu.classList.toggle('open');
       openMenuBtn.classList.toggle('open');
-      $backdrop.classList.toggle('open');
+      $backdrop.classList.toggle('hidden');
       body.classList.toggle('scroll-disable');
       // const scrollLockMethod = !isMenuOpen ? 'disableBodyScroll' : 'enableBodyScroll';
       // bodyScrollLock[scrollLockMethod](document.body);
