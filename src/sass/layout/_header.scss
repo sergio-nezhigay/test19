@@ -124,7 +124,11 @@
     height: 100vh;
     width: 100vw;
     background-color: var(--color-main-regular);
+    opacity: 0.6;
     z-index: 1;
+    &.open {
+      opacity: 0.3;
+    }
   }
 }
 
