@@ -1,7 +1,7 @@
 (() => {
     const mobileMenu = document.querySelector('.js-menu');
     const openMenuBtn = document.querySelector('.js-open-menu');
-    const closeMenuBtn = document.querySelector('.js-close-menu');
+    const closeMenuBtn = document.querySelector('.js-menu__close');
     const $backdrop = document.querySelector('.header__backdrop');
     const body = document.querySelector('body');
 

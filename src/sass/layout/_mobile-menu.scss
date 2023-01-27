@@ -21,10 +21,12 @@
   width: calc(100vw - 16px);
   background-color: var(--color-white);
   border-radius: 12px 12px 0px 0px;
-  transform: translateX(-50%);
-  padding: 64px 12px 12px;
-  // transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(-50%) scaleY(0) translateY(100%);
+  transform-origin: bottom;
+  padding: 65px 12px 12px;
+
   z-index: 99;
+  transition: transform var(--animation);
   &__list {
     @extend %list;
     display: flex;
@@ -72,62 +74,24 @@
 }
 
 .open.js-menu {
-  // transform: scaleX(100%);
+  transform: translateX(-50%) scaleY(1) translateY(0);
 }
 
-#nav-icon4 {
-  width: 21px;
-  height: 16px;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-}
-
-#nav-icon4 span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #fff;
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-#nav-icon4 span:nth-child(1) {
-  top: 0px;
-  transform-origin: left center;
-}
-
-#nav-icon4 span:nth-child(2) {
-  top: 6px;
-  transform-origin: left center;
-}
-
-#nav-icon4 span:nth-child(3) {
-  top: 12px;
-  transform-origin: left center;
-}
-
-#nav-icon4.open span:nth-child(1) {
-  transform: rotate(45deg);
-  top: -2px;
-  left: 3px;
-}
-
-#nav-icon4.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-
-#nav-icon4.open span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 13px;
-  left: 3px;
-}
-
-.scroll-disable {
-  // position: fixed;
-  // overflow-y: scroll;
+.js-open-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 9px 6px;
+  &__line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+  }
+  @include for-size(tabletsd) {
+    display: none;
+  }
 }
