@@ -49,21 +49,24 @@
   }
   &__close {
     position: absolute;
-    display: block;
-    right: 12px;
-    top: 12px;
-    z-index: 99;
-    // padding: 10px;
-    color: red;
-    background-color: transparent;
+    right: 33px;
+    top: 23px;
     border: none;
     outline: none;
-    &::before {
+    cursor: pointer;
+    &::before,
+    &::after {
       @include pseudo;
+      position: absolute;
       width: 20px;
       height: 2px;
-      transform: rotateX(45deg);
       background-color: var(--color-accent);
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 }
