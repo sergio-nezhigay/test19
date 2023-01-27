@@ -117,6 +117,15 @@
       line-height: 1.25;
     }
   }
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-main-regular);
+    z-index: 1;
+  }
 }
 
 .my-radio {

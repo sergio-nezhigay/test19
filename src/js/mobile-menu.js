@@ -2,8 +2,9 @@
     const mobileMenu = document.querySelector('.js-menu');
     const openMenuBtn = document.querySelector('.js-open-menu');
     const closeMenuBtn = document.querySelector('.js-close-menu');
+    const $backdrop = document.querySelector('.header__backdrop');
     const body = document.querySelector('body');
-    console.log("js started for me");
+
     const toggleMenu = () => {
       const isMenuOpen = openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
       openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
@@ -13,7 +14,7 @@
       // const scrollLockMethod = !isMenuOpen ? 'disableBodyScroll' : 'enableBodyScroll';
       // bodyScrollLock[scrollLockMethod](document.body);
     };
-    console.log("js started for me");
+
     openMenuBtn.addEventListener('click', toggleMenu);
     closeMenuBtn.addEventListener('click', toggleMenu);
   
