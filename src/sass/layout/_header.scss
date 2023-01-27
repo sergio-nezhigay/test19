@@ -3,12 +3,16 @@
 //============
 .header {
   width: 100%;
+
   margin: 0 auto;
   position: absolute;
   z-index: 99;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  @include for-size(mobile-only) {
+    height: 100vh;
+  }
   @include for-size(tabletsd) {
     top: 50px;
   }

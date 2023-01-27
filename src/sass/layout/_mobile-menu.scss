@@ -16,10 +16,10 @@
 
 .js-menu {
   position: fixed;
-  right: calc((100% - $mobile) / 2);
+  left: 0;
   bottom: 0;
-  width: 350px;
-  height: 100vh;
+  width: 100vw;
+  height: 50vh;
   background-color: #000;
   transform: scaleX(0%);
   transform-origin: right;
