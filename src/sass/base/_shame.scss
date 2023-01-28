@@ -21,5 +21,30 @@ a {
 }
 
 .supersoft-bg {
+  position: relative;
   background: var(--gradient-Supersoft);
+  border-radius: 0px 0px 12px 12px;
+  &::before,
+  &::after {
+    @include pseudo;
+    height: 10px;
+    border-radius: 0px 0px 12px 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::before {
+    width: calc(100% - 40px);
+    background: #cacadb;
+    bottom: -10px;
+  }
+  &::after {
+    width: calc(100% - 80px);
+    background: #e7e7f2;
+    bottom: -20px;
+  }
+}
+
+body.scroll-disable {
+  overflow-y: hidden;
 }
