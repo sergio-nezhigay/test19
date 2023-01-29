@@ -1,3 +1,25 @@
 .brands {
-  background-color: grey;
+  &__list {
+    @extend %list;
+    display: grid;
+    grid-template-columns: 1fr;
+    @include for-size(tabletsd) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include for-size(tablethd) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &__link {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__item:nth-child(n + 7) {
+    display: none;
+    @include for-size(tabletsd) {
+      display: block;
+    }
+  }
 }
