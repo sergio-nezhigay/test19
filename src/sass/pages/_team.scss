@@ -24,6 +24,9 @@
     @include for-size(tablethd) {
       grid-template-columns: 400px 1fr;
     }
+    @include for-size(desktopsd) {
+      grid-template-columns: 400px 1fr;
+    }
   }
   &__image-wrapper {
     width: 100%;
@@ -73,6 +76,12 @@
     padding: 30px 30px 30px;
     text-align: left;
     background-color: var(--color-grey-bg);
+    @include for-size(desktopsd) {
+      min-height: 344px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   &__pagination.swiper-pagination {
