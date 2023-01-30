@@ -8,6 +8,9 @@
   }
   &__list {
     @extend %list;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   &__image {
     height: 200px;
@@ -44,6 +47,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.57;
+    color: var(--color-black);
   }
   &__details {
     padding: 30px;

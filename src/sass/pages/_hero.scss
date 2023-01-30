@@ -14,4 +14,28 @@
     line-height: 1.21;
     text-align: center;
   }
+  &__icon {
+    stroke: currentColor;
+    fill: transparent;
+    width: 18px;
+    height: 9px;
+    opacity: 1;
+  }
+  &__circle {
+    border: 2px solid var(--color-white);
+    opacity: 0.5;
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    transition: color var(--animation), border-color var(--animation);
+    &:hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+      cursor: pointer;
+    }
+  }
 }

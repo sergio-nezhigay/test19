@@ -50,9 +50,10 @@
 }
 
 //use for red text
+
 @mixin red-text {
-  background: var(--gradient-red-text);
+  background: #ef8080;
+  background: linear-gradient(to right, #ef8080 0%, #f0145a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }

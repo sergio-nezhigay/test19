@@ -61,8 +61,9 @@
       padding: 0;
     }
     &:hover,
-    .active & {
-      color: var(--color-accent);
+    &.active {
+      // color: var(--color-accent);
+      @include red-text;
     }
     .active &:focus {
       background-color: transparent;

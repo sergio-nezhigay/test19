@@ -3,6 +3,7 @@
 //============
 :root {
   --color-white: #ffffff;
+  --color-black: #000000;
   --color-accent: #f0145a;
   --color-main-regular: #323264;
   --color-active-regular: #24a3ff;
@@ -12,7 +13,7 @@
   --color-grey-bg: #f5f5fa;
   --font-primary: 'Montserrat', sans-serif;
 
-  --animation: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  --animation: 2.5s cubic-bezier(0.19, 1, 0.22, 1);
   --gradient-Supersoft: linear-gradient(
     228.57deg,
     #323264 11.93%,
@@ -35,3 +36,6 @@ $tabletsd: 768px;
 $tablethd: 1024px;
 $desktopsd: 1440px;
 $desktophd: 1920px;
+
+$nav-link-transition: color 2.15s ease-in-out,
+  background-color 2.15s ease-in-out, border-color 2.15s ease-in-out;
