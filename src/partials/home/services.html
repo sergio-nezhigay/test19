@@ -1,13 +1,12 @@
 <section class="section services">
   <div class="container">
-    <div class="services__wrapper">
-      <h3 class="services__subtitle">Services</h3>
-      <svg height="12" width="12" class="icon services__icon">
-        <use href="./images/icons.svg#icon-arrow"></use>
-      </svg>
-    </div>
-
-    <h2 class="services__title">What can we do better than others?</h2>
+    <include
+      src="./partials/components/title.html"
+      locals='{
+      "first": "Services",
+      "second": "What can we do better than others?"
+  }'
+    ></include>
     <ul class="services__list">
       <li class="services__item">
         <img
