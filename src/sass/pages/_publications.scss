@@ -24,9 +24,11 @@
     margin-bottom: 34px;
     &::after {
       @include pseudo;
-      width: 100px;
+      width: 100%;
       height: 4px;
       background-color: #e6e6f0;
+      left: 0;
+      // bottom: 0px;
     }
   }
 }
