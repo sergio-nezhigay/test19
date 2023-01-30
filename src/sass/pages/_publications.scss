@@ -5,12 +5,27 @@
   &__card {
     border-radius: 8px;
     overflow: hidden;
+    height: 100%;
   }
   &__list {
     @extend %list;
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+    @include for-size(tabletsd) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include for-size(tablethd) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  &__item:last-child {
+    @include for-size(tabletsd) {
+      grid-column: span 2;
+    }
+    @include for-size(tablethd) {
+      grid-column: span 1;
+    }
   }
   &__image {
     height: 200px;
@@ -52,5 +67,6 @@
   &__details {
     padding: 30px;
     background-color: var(--color-white);
+    height: 100%;
   }
 }
