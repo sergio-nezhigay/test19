@@ -93,3 +93,23 @@ main {
     fill: transparent;
   }
 }
+
+.point {
+  @include for-size(tabletsd) {
+    position: relative;
+    &::before {
+      @include pseudo;
+      width: 6px;
+      height: 6px;
+      left: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--color-grey-text);
+      border-radius: 50%;
+    }
+    &.point--white::before {
+      background-color: var(--color-white);
+      left: 0px;
+    }
+  }
+}

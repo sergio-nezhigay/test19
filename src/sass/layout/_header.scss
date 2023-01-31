@@ -90,16 +90,16 @@
       display: block;
       margin-left: 0px;
       padding-left: 15px;
-      &::before {
-        @include pseudo;
-        width: 6px;
-        height: 6px;
-        left: 0px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: var(--color-white);
-        border-radius: 50%;
-      }
+      // &::before {
+      //   @include pseudo;
+      //   width: 6px;
+      //   height: 6px;
+      //   left: 0px;
+      //   top: 50%;
+      //   transform: translateY(-50%);
+      //   background-color: var(--color-white);
+      //   border-radius: 50%;
+      // }
     }
     &:hover,
     &:active {

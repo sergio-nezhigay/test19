@@ -17,7 +17,9 @@
   }
   &__address {
     display: grid;
+    gap: 21px;
     grid-template-columns: 1fr;
+    position: relative;
     @include for-size(tabletsd) {
       grid-template-columns: 1fr 1fr;
     }
@@ -63,18 +65,18 @@
     @include for-size(tabletsd) {
       grid-row: 1/2;
       grid-column: 2/3;
+      text-align: right;
     }
   }
   &__wrap-addr {
-    margin-bottom: 21px;
     @include for-size(tabletsd) {
       display: flex;
+      gap: 26px;
       align-items: center;
     }
   }
   &__wrap-links {
-    margin-bottom: 30px;
-
+    list-style-type: none;
     @include for-size(tabletsd) {
       display: flex;
 
