@@ -1,0 +1,113 @@
+.crew {
+  padding-top: 50px;
+
+  @include for-size(tabletsd) {
+    padding-top: 80px;
+  }
+  &__subtitle {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  &__slide {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    @include for-size(tablethd) {
+      grid-template-columns: 400px 1fr;
+    }
+    @include for-size(desktopsd) {
+      grid-template-columns: 400px 1fr;
+    }
+  }
+  &__image-wrapper {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    @include for-size(tablethd) {
+      height: 100%;
+      flex-grow: 1;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+  &__wrapper {
+    display: flex;
+    color: var(--color-active-regular);
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--color-grey-text);
+    margin-bottom: 6px;
+  }
+  &__position {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57;
+    color: var(--color-grey-text);
+  }
+  &__details {
+    width: 100%;
+    padding: 30px 30px 30px;
+    text-align: left;
+    background-color: var(--color-grey-bg);
+    @include for-size(desktopsd) {
+      min-height: 344px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__pagination.swiper-pagination {
+    position: relative;
+    bottom: 0px;
+    margin-top: 10px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  overflow-x: hidden;
+  margin-bottom: 60px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  margin: 0 8px;
+  opacity: 0.2;
+  background: var(--color-active-regular);
+  // background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  // color: #fff;
+  opacity: 1;
+  background: var(--color-active-regular);
+}

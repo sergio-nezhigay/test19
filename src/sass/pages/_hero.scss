@@ -1,6 +1,6 @@
 .hero {
   background-image: url('../images/h.svg');
-  background-position: 45%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include for-size(tabletsd) {
+    background-size: contain;
+  }
   &__title {
     font-weight: 700;
     font-size: 38px;
