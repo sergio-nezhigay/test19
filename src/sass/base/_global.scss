@@ -88,11 +88,9 @@ main {
     &--long {
       @include for-size(tabletsd) {
         margin-bottom: 60px;
-        background-color: yellow;
       }
       @include for-size(tablethd) {
         padding: 0 120px;
-        background-color: yellow;
       }
     }
   }
@@ -120,6 +118,9 @@ main {
     &.point--white::before {
       background-color: var(--color-white);
       left: 0px;
+      .light & {
+        background-color: var(--color-grey-separator);
+      }
     }
   }
 }
