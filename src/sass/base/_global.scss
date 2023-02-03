@@ -85,6 +85,16 @@ main {
       font-size: 38px;
       line-height: 1.21;
     }
+    &--long {
+      @include for-size(tabletsd) {
+        margin-bottom: 60px;
+        background-color: yellow;
+      }
+      @include for-size(tablethd) {
+        padding: 0 120px;
+        background-color: yellow;
+      }
+    }
   }
   &__icon {
     width: 12px;

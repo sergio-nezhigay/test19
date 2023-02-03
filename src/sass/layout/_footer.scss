@@ -25,14 +25,14 @@
     }
   }
   &__address::before {
-    @include pseudo;
-    position: absolute;
-    top: -30px;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-grey-separator);
+    // @include pseudo;
+    // position: absolute;
+    // top: -30px;
+    // left: 0;
+    // display: block;
+    // width: 100%;
+    // height: 2px;
+    // background-color: var(--color-grey-separator);
   }
   &__link {
     font-weight: 700;
