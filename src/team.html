@@ -24,7 +24,14 @@
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
-    <include src="./partials/header.html"></include>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+      "type": "light"
+  }'
+    ></include>
+
+    <!-- <include src="./partials/header.html"></include> -->
     <main>
       <section class="section team">
         <div class="container">

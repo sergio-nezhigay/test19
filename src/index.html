@@ -33,7 +33,12 @@
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
-    <include src="./partials/header.html"></include>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+    "type": "dark"
+}'
+    ></include>
     <main>
       <div class="supersoft-bg">
         <include src="./partials/home/hero.html"></include>

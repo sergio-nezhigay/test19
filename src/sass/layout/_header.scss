@@ -51,6 +51,14 @@
         background: inherit;
       }
     }
+    .light &--first {
+      @include for-size(mobile-only) {
+        background: var(--color-grey-bg);
+      }
+      @include for-size(tabletsd) {
+        background: inherit;
+      }
+    }
     &--second {
       justify-content: start;
       @include for-size(mobile-only) {
@@ -86,6 +94,9 @@
     position: relative;
     font-style: normal;
     transition: color var(--animation);
+    .light & {
+      color: var(--color-grey-text);
+    }
     @include for-size(tabletsd) {
       display: block;
       margin-left: 0px;
@@ -116,6 +127,9 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 1.25;
+      // .light & {
+      //   color: #b3b3ba;
+      // }
     }
   }
   &__backdrop {
@@ -153,6 +167,9 @@
     &:checked + label {
       background-color: #f0145a;
     }
+    .light &:checked + label {
+      color: var(--color-white);
+    }
   }
   &__label {
     font-weight: 700;
@@ -175,6 +192,13 @@
       cursor: pointer;
       background: rgba(255, 255, 255, 0.2);
     }
+    .light & {
+      color: #b3b3ba;
+      &:hover,
+      &:active {
+        color: var(--color-white);
+      }
+    }
   }
 }
 
@@ -191,12 +215,16 @@
   &__item:hover &__link::after {
     transform: scaleX(100%);
   }
+  .light & {
+    color: var(--color-active-regular);
+  }
   &__link {
     @extend %link;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.25;
     position: relative;
+
     &::after {
       @include pseudo;
       bottom: -3px;

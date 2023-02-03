@@ -13,6 +13,7 @@
   --color-grey-text: #b3b3ba;
   --color-grey-bg: #f5f5fa;
   --color-grey-separator: #e6e6f0;
+
   --font-primary: 'Montserrat', sans-serif;
 
   --animation: 2.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -29,6 +30,11 @@
   --padding-tablet: 60px;
   --padding-desktopsd: 60px;
   --padding-desktophd: 160px;
+}
+
+.light {
+  // for logo sub-color at light pages
+  --color2: var(--color-main-regular);
 }
 
 //BREAKPOINTS
