@@ -1,11 +1,48 @@
 .team {
   padding-top: calc(45px + 87px);
 
-  background-color: grey !important;
+  // background-color: grey !important;
   &__name {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.25;
     color: var(--color-main-regular);
+    margin-bottom: 5px;
+  }
+  &__position {
+    font-size: 14px;
+    line-height: 1.57;
+    color: var(--color-grey-text);
+  }
+  &__list {
+    @extend %list;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  &__image {
+    margin-bottom: 15px;
+    border-radius: 12px;
+  }
+  &__icon {
+    // color: var(--color-active-regular);
+    stroke: currentColor;
+    fill: transparent;
+  }
+  &__circle {
+    background-color: var(--color-grey-bg);
+    color: var(--color-active-regular);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transform: rotate(-90deg);
+    transition: transform var(--animation);
+    &:hover {
+      transform: rotate(-180deg);
+      cursor: pointer;
+    }
   }
 }
