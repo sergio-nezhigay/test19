@@ -23,6 +23,9 @@
     grid-template-columns: auto auto;
     justify-content: space-between;
   }
+  &__slash-icon {
+    color: green;
+  }
   &__breadcrumb {
     font-weight: 400;
     font-size: 36px;
@@ -72,7 +75,7 @@
       align-items: flex-start;
       @include for-size(mobile-only) {
         padding: 15px 15px;
-        justify-content: space-between;
+        // justify-content: space-between;
       }
       @include for-size(tablethd) {
         grid-row: 1/3;
