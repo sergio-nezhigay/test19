@@ -1,6 +1,12 @@
 .service {
   padding-top: calc(87px + 45px);
-  padding-bottom: 200px;
+  padding-bottom: 60px;
+  @include for-size(tabletsd) {
+    padding-top: 280px;
+  }
+  @include for-size(tablethd) {
+    padding-top: 176px;
+  }
   &__image {
     margin: 0 auto;
     margin-bottom: 28px;
@@ -14,22 +20,57 @@
   &__button {
     padding: 18px 30px;
     margin: 0 auto 30px;
-
     font-weight: 700;
     font-size: 16px;
     line-height: 1.2;
-
     color: var(--color-white);
     background-color: var(--color-active-regular);
     box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
     border-radius: 12px;
     border: none;
     display: block;
+    @include for-size(tabletsd) {
+      margin-bottom: 60px;
+    }
   }
   &__subtitle {
     font-weight: 700;
     font-size: 22px;
     line-height: 1.23;
     margin-bottom: 30px;
+  }
+
+  &__item-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.44;
+  }
+  &__list {
+    list-style-position: outside;
+    margin-left: 18px;
+    @include for-size(tabletsd) {
+      -moz-column-count: 2;
+      -moz-column-gap: 20px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 70px;
+    }
+  }
+  &__item {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.44;
+    &::marker {
+      color: var(--color-accent);
+    }
+  }
+  &__container {
+    @include for-size(desktopsd) {
+      padding-left: 180px;
+      padding-right: 180px;
+    }
+    @include for-size(desktophd) {
+      padding-left: 280px;
+      padding-right: 280px;
+    }
   }
 }
