@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal - crew Page</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+      "type": "dark",
+      "breadcrumbsname": "services",
+      "teamclass": "",
+      "servicesclass": "active"
+  }'
+    ></include>
+    <main>
+      <section class="section services">
+        <div class="container">
+          <h1 class="visually-hidden">Our Team</h1>
+        </div>
+      </section>
+    </main>
+    <include src="./partials/footer.html"></include>
+  </body>
+</html>
