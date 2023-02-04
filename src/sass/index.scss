@@ -24,18 +24,20 @@
 @import 'layout/scroll-arrow';
 @import 'layout/tabs';
 @import 'layout/footer';
+@import 'layout/titles';
 
 // COMPONENTS
 // @import 'components/logo';
 // @import 'components/buttons';
 
 // PAGES
-@import 'pages/hero';
-@import 'pages/services';
-@import 'pages/crew';
-@import 'pages/brands';
-@import 'pages/publications';
-@import 'pages/team';
+@import 'pages/home/hero';
+@import 'pages/home/services';
+@import 'pages/home/crew';
+@import 'pages/home/brands';
+@import 'pages/home/publications';
+@import 'pages/home/team';
+@import 'pages/service';
 
 // VENDORS
 @import 'vendor/bootstrap';
