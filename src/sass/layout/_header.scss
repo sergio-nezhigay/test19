@@ -24,12 +24,24 @@
     justify-content: space-between;
   }
   &__slash-icon {
-    color: green;
+    color: var(--color-accent);
+    @include for-size(tabletsd) {
+      width: 21px;
+      height: 47px;
+    }
+    &[data-page=''] {
+      display: none;
+    }
   }
+
   &__breadcrumb {
     font-weight: 400;
-    font-size: 36px;
-    line-height: 1.22;
+    font-size: 20px;
+    line-height: 1.2;
+    @include for-size(tabletsd) {
+      font-size: 33px;
+      line-height: 1.22;
+    }
     .light & {
       color: var(--color-main-regular);
     }
@@ -70,7 +82,8 @@
       }
     }
     &--second {
-      // display: flex;
+      display: flex;
+      gap: 4px;
       justify-content: start;
       align-items: flex-start;
       @include for-size(mobile-only) {
