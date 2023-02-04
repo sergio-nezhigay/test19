@@ -244,6 +244,12 @@
     }
     &.active {
       color: var(--color-accent);
+      &::after {
+        background-color: var(--color-accent);
+      }
+      .light &::after {
+        background-color: var(--color-accent);
+      }
     }
     &::after {
       @include pseudo;
@@ -252,14 +258,10 @@
       width: 100%;
       transform: scaleX(0%);
       height: 2px;
-
       background-color: var(--color-white);
       transition: transform var(--animation);
-      .active& {
-        background-color: var(--color-accent);
-      }
       .light & {
-        background-color: var(--color-accent);
+        background-color: var(--color-active-regular);
       }
     }
   }
