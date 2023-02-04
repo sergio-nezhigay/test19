@@ -25,6 +25,7 @@ a {
   position: relative;
   background: var(--gradient-Supersoft);
   border-radius: 0px 0px 12px 12px;
+  margin-bottom: 80px;
   &::before,
   &::after {
     @include pseudo;
