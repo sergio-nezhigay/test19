@@ -1,0 +1,19 @@
+.aboutus {
+  padding-top: calc(45px + 87px);
+  padding-bottom: 30px;
+  @include for-size(tabletsd) {
+    padding-top: calc(60px + 220px);
+  }
+  @include for-size(tablethd) {
+    padding-top: calc(60px + 116px);
+  }
+  &__text {
+    font-size: 19px;
+    line-height: 30px;
+    color: var(--color-black);
+    margin-bottom: 30px;
+  }
+  &__icon {
+    color: var(--color-accent);
+  }
+}

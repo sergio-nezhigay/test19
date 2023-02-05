@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal - About us Page</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+      "type": "light",
+      "breadcrumbsName": "about us",
+      "aboutusClass": "active"
+  }'
+    ></include>
+    <main>
+      <section class="section aboutus">
+        <div class="container">
+          <h1 class="titles__second titles__second--long">
+            We turn over the idea of legal services
+          </h1>
+          <p class="aboutus__text">
+            Consolidating many years of experience and practice, the company's
+            lawyers accompany complex projects and achieve the adoption of a
+            number of decisions that are important for the industry. Many people
+            form the practice of applying the law of the sea in Ukraine. HLEGAL
+            is a reliable business partner, confirmed by stable cooperation with
+            international law firms, the trust of large Ukrainian and
+            international companies, and the recognition of professional
+            ratings.
+          </p>
+          <ul>
+            <li>
+              <svg height="26" width="23" class="icon aboutus__icon">
+                <use href="./images/icons.svg#icon-flag"></use>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <include src="./partials/components/footer.html"></include>
+  </body>
+</html>
