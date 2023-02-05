@@ -20,6 +20,12 @@
     &--small-margin {
       margin-bottom: 15px;
     }
+    &--facebook {
+      display: flex;
+
+      align-items: center;
+      gap: 10px;
+    }
   }
   &__list {
     @extend %list;
