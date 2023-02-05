@@ -14,6 +14,11 @@
     line-height: 1.22;
     margin-bottom: 28px;
     @include red-text;
+    &--down {
+      @include for-size(tablethd) {
+        margin-left: 30px;
+      }
+    }
   }
   &__text {
     font-size: 19px;
@@ -24,6 +29,10 @@
   &__group {
     display: grid;
     grid-template-columns: 1fr;
+    margin-bottom: 30px;
+    @include for-size(tabletsd) {
+      margin-bottom: 60px;
+    }
     @include for-size(tablethd) {
       grid-template-columns: 6fr 4fr;
       gap: 30px;
@@ -60,5 +69,11 @@
     font-size: 16px;
     line-height: 1.22;
     color: var(--color-main-regular);
+  }
+  &__image {
+    margin-bottom: 30px;
+    @include for-size(tabletsd) {
+      margin-bottom: 60px;
+    }
   }
 }
