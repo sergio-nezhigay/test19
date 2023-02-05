@@ -76,8 +76,8 @@
 
   &__pagination.swiper-pagination {
     position: relative;
-    bottom: 0px;
-    margin-top: 10px;
+    bottom: unset;
+    margin-top: 14px;
   }
 }
 
@@ -86,7 +86,7 @@
   height: 100%;
   overflow: visible;
   overflow-x: hidden;
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 }
 
 .swiper-slide img {
@@ -100,12 +100,16 @@
   font-size: 0;
   margin: 0 8px;
   opacity: 0.2;
-  background: var(--color-active-regular);
-  // background: rgba(0, 0, 0, 0.2);
+  background-color: var(--color-active-regular);
+  transition: opacity var(--animation), background-color var(--animation);
+  &:hover {
+    opacity: 0.6;
+    background-color: var(--color-active-regular);
+  }
 }
 
 .swiper-pagination-bullet-active {
   // color: #fff;
   opacity: 1;
-  background: var(--color-active-regular);
+  background-color: var(--color-active-regular);
 }
