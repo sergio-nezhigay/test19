@@ -1,4 +1,5 @@
 .aboutus {
+  //   background-color: grey;
   padding-top: calc(45px + 87px);
   padding-bottom: 30px;
   @include for-size(tabletsd) {
@@ -7,13 +8,57 @@
   @include for-size(tablethd) {
     padding-top: calc(60px + 116px);
   }
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.22;
+    margin-bottom: 28px;
+    @include red-text;
+  }
   &__text {
     font-size: 19px;
     line-height: 30px;
     color: var(--color-black);
     margin-bottom: 30px;
   }
-  &__icon {
+  &__group {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include for-size(tablethd) {
+      grid-template-columns: 6fr 4fr;
+      gap: 30px;
+    }
+  }
+  &__list {
+    @extend %list;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 30px;
+    position: relative;
+    &::before {
+      @include pseudo;
+      height: 100%;
+      left: -30px;
+      width: 4px;
+      background-color: var(--color-grey-separator);
+    }
+  }
+  &__wrapper {
+    display: flex;
+    gap: 13px;
+    align-items: center;
     color: var(--color-accent);
+    @include red-text;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.22;
+    margin-bottom: 10px;
+  }
+  &__details {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.22;
+    color: var(--color-main-regular);
   }
 }
