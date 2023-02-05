@@ -24,9 +24,6 @@
     @include for-size(tablethd) {
       grid-template-columns: 400px 1fr;
     }
-    @include for-size(desktopsd) {
-      grid-template-columns: 400px 1fr;
-    }
   }
   &__image-wrapper {
     width: 100%;

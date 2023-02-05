@@ -1,0 +1,30 @@
+.contact {
+  //   background-color: rgb(245, 194, 194);
+  padding-top: 132px;
+  padding-bottom: 100px;
+  @include for-size(tabletsd) {
+    padding-top: calc(60px + 220px);
+  }
+  @include for-size(tablethd) {
+    padding-top: calc(60px + 116px);
+  }
+  &__link {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1.43;
+    color: var(--color-main-regular);
+    margin-bottom: 30px;
+    &--active {
+      color: var(--color-active-regular);
+    }
+    &--small-margin {
+      margin-bottom: 15px;
+    }
+  }
+  &__list {
+    @extend %list;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

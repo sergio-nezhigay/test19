@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal - Our Contacts</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+      "type": "light",
+      "breadcrumbsName": "contact",
+      "contactClass": "active"
+  }'
+    ></include>
+    <main>
+      <section class="section contact">
+        <div class="container">
+          <h1 class="visually-hidden">Our contacts</h1>
+          <ul class="contact__list">
+            <li>
+              <a href="" class="contact__link">Kyiv, Mechnikova str, 14</a>
+              <div class="separator separator--grey"></div>
+            </li>
+            <li>
+              <a
+                href="tel:0800 211 927"
+                class="contact__link contact__link--small-margin"
+                >0800 211 927</a
+              >
+              <a
+                href="mailto:contact@forstudy.space"
+                class="contact__link contact__link--active"
+                >contact@forstudy.space</a
+              >
+              <div class="separator separator--grey"></div>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="nofollow"
+                class="contact__link"
+              >
+                <svg height="24" width="24" class="icon">
+                  <use href="./images/icons.svg#icon-logo-facebook"></use>
+                </svg>
+                Our page on facebook
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <include src="./partials/components/footer.html"></include>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/scroll.js"></script> -->
+  </body>
+</html>
