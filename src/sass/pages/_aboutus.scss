@@ -1,7 +1,7 @@
 .aboutus {
   //   background-color: grey;
   padding-top: calc(45px + 87px);
-  padding-bottom: 30px;
+
   @include for-size(tabletsd) {
     padding-top: calc(60px + 220px);
   }
@@ -15,6 +15,7 @@
     margin-bottom: 28px;
     @include red-text;
     &--down {
+      margin-bottom: 0;
       @include for-size(tablethd) {
         margin-left: 30px;
       }
@@ -75,5 +76,26 @@
     @include for-size(tabletsd) {
       margin-bottom: 60px;
     }
+  }
+  &__image-wrapper {
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.achievements {
+  background-color: var(--color-grey-bg);
+  padding-top: 30px;
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-main-regular);
+    margin-bottom: 30px;
   }
 }

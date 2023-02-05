@@ -21,6 +21,10 @@
       sizes="16x16"
       href="./images/favicons/favicon-16x16.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
@@ -115,7 +119,67 @@
           </div>
         </div>
       </section>
+      <section class="section achievements" data-slider="achievements">
+        <div class="container">
+          <h2 class="achievements__title">achievements</h2>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide crew__slide">
+                <div class="aboutus__image-wrapper">
+                  <img
+                    src="./images/aboutus/achievment1.jpg"
+                    alt="achievment1"
+                    class="image"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide crew__slide">
+                <div class="aboutus__image-wrapper">
+                  <img
+                    src="./images/aboutus/achievment2.jpg"
+                    alt="achievment2"
+                    class="image"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide crew__slide">
+                <div class="aboutus__image-wrapper">
+                  <img
+                    src="./images/aboutus/achievment3.jpg"
+                    alt="achievment3"
+                    class="image"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide crew__slide">
+                <div class="aboutus__image-wrapper">
+                  <img
+                    src="./images/aboutus/achievment4.jpg"
+                    alt="achievment4"
+                    class="image"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide crew__slide">
+                <div class="aboutus__image-wrapper">
+                  <img
+                    src="./images/aboutus/achievment2.jpg"
+                    alt="achievment2"
+                    class="image"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination crew__pagination"></div>
+          </div>
+        </div>
+      </section>
     </main>
     <include src="./partials/components/footer.html"></include>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/scroll.js"></script>
   </body>
 </html>
