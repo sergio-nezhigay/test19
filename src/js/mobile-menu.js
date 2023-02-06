@@ -22,11 +22,7 @@
 
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);
-  backdropEl.addEventListener('click', onbackdropClick);
-
-  const onbackdropClick = event => {
-    console.log(event);
-  };
+  backdropEl.addEventListener('click', toggleMenu);
 
   // Close the mobile menu on wider screens if the device orientation changes
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
