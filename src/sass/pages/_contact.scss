@@ -15,8 +15,13 @@
     line-height: 1.43;
     color: var(--color-main-regular);
     margin-bottom: 30px;
+    transition: color var(--animation);
     &--active {
       color: var(--color-active-regular);
+    }
+    &:hover,
+    &:active {
+      color: var(--color-accent);
     }
     &--small-margin {
       margin-bottom: 15px;

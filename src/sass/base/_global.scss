@@ -18,6 +18,14 @@
   @include for-size(desktophd) {
     padding: 0 var(--padding-desktophd);
   }
+  &--wide {
+    @include for-size(desktopsd) {
+      padding: 0 180px;
+    }
+    @include for-size(desktophd) {
+      padding: 0 280px;
+    }
+  }
 }
 
 body {
