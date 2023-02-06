@@ -62,9 +62,10 @@
     width: 32px;
     height: 32px;
     transform: rotate(-90deg);
-    transition: transform var(--animation);
+    transition: color var(--animation), background-color var(--animation);
     &:hover {
-      transform: rotate(-180deg);
+      color: var(--color-accent);
+      background-color: var(--color-grey-bg-alt);
       cursor: pointer;
     }
   }

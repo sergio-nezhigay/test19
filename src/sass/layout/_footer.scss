@@ -35,7 +35,7 @@
   }
   &__icon {
     margin: 0 auto;
-    color: var(--color-active-regular);
+
     @include for-size(mobile-only) {
       margin-bottom: 10px;
     }

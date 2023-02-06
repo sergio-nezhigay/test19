@@ -187,3 +187,11 @@ main {
     background-color: var(--color-active-active);
   }
 }
+
+.link {
+  color: var(--color-active-regular);
+  transition: color var(--animation);
+  &:hover {
+    color: var(--color-accent);
+  }
+}
