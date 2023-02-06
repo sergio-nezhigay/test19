@@ -28,9 +28,13 @@
     line-height: 1.21;
     text-align: center;
     padding: 7px 0;
-    transition: color var(--animation);
-    &:hover {
-      color: #8b939b;
+    transition: color var(--animation), background-color var(--animation);
+    &:hover,
+    &:active {
+      background-color: var(--color-grey-separator);
+    }
+    &.active {
+      color: var(--color-accent);
     }
   }
   &__close {
