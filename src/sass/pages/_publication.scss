@@ -1,0 +1,65 @@
+.publication {
+  background-color: inherit;
+  padding-top: 132px;
+  padding-bottom: 30px;
+  @include for-size(tabletsd) {
+    padding-top: calc(60px + 220px);
+    padding-bottom: 60px;
+  }
+  @include for-size(tablethd) {
+    padding-top: calc(60px + 116px);
+  }
+}
+
+.publication-radio {
+  display: flex;
+  margin: 0 auto;
+  //   justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  //   height: 42px;
+  background-color: var(--color-grey-separator);
+  border-radius: 12px;
+  &__input {
+    appearance: none;
+    display: none;
+    // background-color: var(--color-grey-separator);
+
+    &:checked + label {
+      background-color: var(--color-white);
+    }
+    .light &:checked + label {
+      color: var(--color-white);
+    }
+  }
+  &__label {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 38px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: inherit;
+    transition: background-color var(--animation);
+    color: var(--color-main-regular);
+    &:hover,
+    &:active {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .light & {
+      color: #b3b3ba;
+      &:hover,
+      &:active {
+        color: var(--color-accent);
+        background: var(--color-grey-bg);
+      }
+    }
+  }
+}

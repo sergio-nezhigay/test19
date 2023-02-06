@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal - Our Publications</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+      "type": "light",
+      "breadcrumbsName": "publications",
+      "publicationsClass": "active"
+  }'
+    ></include>
+    <main>
+      <section class="section publication">
+        <div class="container">
+          <h1 class="visually-hidden">Our publications</h1>
+          <div class="publication-radio">
+            <input
+              type="radio"
+              name="publications"
+              id="news"
+              class="publication-radio__input"
+            />
+            <label for="news" class="publication-radio__label">news</label>
+            <input
+              type="radio"
+              name="publications"
+              id="articles"
+              checked
+              class="publication-radio__input"
+            />
+            <label for="articles" class="publication-radio__label"
+              >articles</label
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <include src="./partials/components/footer.html"></include>
+    <script src="./js/mobile-menu.js"></script>
+  </body>
+</html>

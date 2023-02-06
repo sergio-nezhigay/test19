@@ -10,7 +10,7 @@
   left: 50%;
   transform: translateX(-50%);
   @include for-size(mobile-only) {
-    height: 100vh;
+    // height: 100vh;
   }
   @include for-size(tabletsd) {
     top: 50px;
