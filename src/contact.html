@@ -36,38 +36,76 @@
       <section class="section contact">
         <div class="container">
           <h1 class="visually-hidden">Our contacts</h1>
-          <ul class="contact__list">
-            <li>
-              <a href="" class="contact__link">Kyiv, Mechnikova str, 14</a>
-              <div class="separator separator--grey"></div>
-            </li>
-            <li>
-              <a
-                href="tel:0800 211 927"
-                class="contact__link contact__link--small-margin"
-                >0800 211 927</a
-              >
-              <a
-                href="mailto:contact@forstudy.space"
-                class="contact__link contact__link--active"
-                >contact@forstudy.space</a
-              >
-              <div class="separator separator--grey"></div>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="nofollow"
-                class="contact__link contact__link--active contact__link--facebook"
-              >
-                <svg height="38" width="38" class="icon">
-                  <use href="./images/icons.svg#icon-logo-facebook"></use>
-                </svg>
-                Our page on facebook
-              </a>
-            </li>
-          </ul>
+          <div class="contact__group">
+            <ul class="contact__list">
+              <li>
+                <a href="" class="contact__link">
+                  Kyiv,<br />
+                  Mechnikova str, 14</a
+                >
+                <div class="separator separator--grey"></div>
+              </li>
+              <li>
+                <a
+                  href="tel:0800 211 927"
+                  class="contact__link contact__link--small-margin"
+                  >0800 211 927</a
+                >
+                <a
+                  href="mailto:contact@forstudy.space"
+                  class="contact__link contact__link--active"
+                  >contact@forstudy.space</a
+                >
+                <div class="separator separator--grey"></div>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="nofollow"
+                  class="contact__link contact__link--active contact__link--facebook"
+                >
+                  <svg height="38" width="38" class="icon">
+                    <use href="./images/icons.svg#icon-logo-facebook"></use>
+                  </svg>
+                  Our page<br />
+                  on facebook
+                </a>
+              </li>
+            </ul>
+            <form class="form">
+              <h2 class="titles__second">We would like to help you</h2>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                class="form__input"
+              />
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                class="form__textarea"
+              ></textarea>
+              <p class="form__subtitle">How to answer you?</p>
+              <input
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="Phone number"
+                class="form__input"
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                class="form__input"
+              />
+              <button type="submit" class="button">Send message</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>

@@ -1,9 +1,10 @@
 .contact {
   //   background-color: rgb(245, 194, 194);
   padding-top: 132px;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
   @include for-size(tabletsd) {
     padding-top: calc(60px + 220px);
+    padding-bottom: 60px;
   }
   @include for-size(tablethd) {
     padding-top: calc(60px + 116px);
@@ -29,6 +30,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       gap: 10px;
+      margin-bottom: 0;
     }
   }
   &__list {
@@ -37,5 +39,17 @@
     flex-direction: column;
     gap: 30px;
     margin-bottom: 30px;
+  }
+  &__group {
+    display: grid;
+    grid-template-columns: 1fr;
+    // margin-bottom: 30px;
+    @include for-size(tabletsd) {
+      // margin-bottom: 60px;
+    }
+    @include for-size(tablethd) {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
   }
 }
