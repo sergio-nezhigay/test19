@@ -53,7 +53,7 @@
     line-height: 1.23;
     color: var(--color-grey-text);
     background-color: transparent;
-    transition: color var(--animation);
+    transition: all var(--animation);
     @include for-size(tabletsd) {
       font-size: 38px;
     }
@@ -62,7 +62,6 @@
     }
     &:hover,
     &.active {
-      // color: var(--color-accent);
       @include red-text;
     }
     .active &:focus {
