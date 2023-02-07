@@ -23,8 +23,16 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
-  &__item {
+  &__link {
     height: 100%;
+  }
+  &__item:nth-child(n + 6) {
+    @include for-size(mobile-only) {
+      display: none;
+    }
+    & .article__image {
+      display: none;
+    }
   }
 }
 
