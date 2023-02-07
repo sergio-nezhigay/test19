@@ -1,13 +1,4 @@
 .aboutus {
-  //   background-color: grey;
-  padding-top: calc(45px + 87px);
-
-  @include for-size(tabletsd) {
-    padding-top: calc(60px + 220px);
-  }
-  @include for-size(tablethd) {
-    padding-top: calc(60px + 116px);
-  }
   &__title {
     font-weight: 700;
     font-size: 30px;

@@ -1,14 +1,11 @@
 .contact {
   //   background-color: rgb(245, 194, 194);
-  padding-top: 132px;
+
   padding-bottom: 30px;
   @include for-size(tabletsd) {
-    padding-top: calc(60px + 220px);
     padding-bottom: 60px;
   }
-  @include for-size(tablethd) {
-    padding-top: calc(60px + 116px);
-  }
+
   &__link {
     font-weight: 400;
     font-size: 21px;

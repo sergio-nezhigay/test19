@@ -67,6 +67,15 @@ main {
 
 .section {
   margin: 0 auto;
+  &--top {
+    padding-top: calc(45px + 87px);
+    @include for-size(tabletsd) {
+      padding-top: calc(60px + 220px);
+    }
+    @include for-size(tablethd) {
+      padding-top: calc(60px + 116px);
+    }
+  }
 }
 
 .point {

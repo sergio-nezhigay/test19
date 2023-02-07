@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal - crew member Page</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <include
+      src="./partials/components/header.html"
+      locals='{
+      "type": "light",
+      "breadcrumbsName": "team",
+      "teamClass": "active"
+  }'
+    ></include>
+    <main>
+      <section class="section section--top member">
+        <div class="container">
+          <img
+            src="./images/team/team5.jpg"
+            alt="member5"
+            loading="lazy"
+            class="image member__image"
+          />
+          <h1 class="member__title">Oksana Kobzar</h1>
+          <p class="member__position">
+            <small>Equity partner, Attorney-at-law</small>
+          </p>
+          <a href="mailto: kobzar@forstudy.space" class="member__link"
+            >kobzar@forstudy.space</a
+          >
+          <a
+            href="https://ua.linkedin.com/"
+            class="member__link member__link--margin-large"
+            target="_blank"
+            rel="nofollow"
+            >LinkedIn profile</a
+          >
+          <div class="separator"></div>
+          <p class="member__text">
+            Oksana heads the practice of international trade and shipping. He
+            specializes in resolving disputes related to the purchase and sale
+            of raw materials and transportation of goods by sea. Desis
+            represents the interests of shipowners, freight forwarders, cargo
+            owners, shipping agents, container lines, as well as international
+            banks and P&I clubs.
+          </p>
+          <h3 class="member__subtitle">Education</h3>
+
+          <p class="member__text">
+            National University "Odessa Law Academy", Master of Law.
+          </p>
+
+          <h3 class="member__subtitle">Experience</h3>
+          <p class="member__text">
+            Her professional experience includes resolving disputes under
+            English law and representing interests in foreign commercial
+            arbitrations such as GAFTA, FOSFA and LMAA. Danilo also represents
+            the interests of clients in the state courts of Ukraine on similar
+            disputes, as well as in the ICAC and IAC at the CCI of Ukraine
+          </p>
+        </div>
+      </section>
+    </main>
+    <include src="./partials/components/footer.html"></include>
+    <script src="./js/mobile-menu.js"></script>
+  </body>
+</html>

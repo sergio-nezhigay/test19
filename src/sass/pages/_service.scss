@@ -1,12 +1,6 @@
 .service {
-  padding-top: calc(87px + 45px);
   padding-bottom: 60px;
-  @include for-size(tabletsd) {
-    padding-top: 280px;
-  }
-  @include for-size(tablethd) {
-    padding-top: 176px;
-  }
+
   &__image {
     margin: 0 auto;
     margin-bottom: 28px;

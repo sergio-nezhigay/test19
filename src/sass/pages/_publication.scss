@@ -1,19 +1,13 @@
 .publications {
   background-color: var(--color-grey-bg);
-  padding-top: calc(45px + 57px + 30px);
-  // padding-bottom: 30px;
   @include for-size(tabletsd) {
-    padding-top: calc(60px + 220px + 30px);
     padding-bottom: 60px;
   }
-  @include for-size(tablethd) {
-    padding-top: calc(30px + 176px);
-  }
+
   &__list {
     @extend %list;
     display: grid;
     grid-template-columns: 1fr;
-
     gap: 30px;
     @include for-size(tabletsd) {
       grid-template-columns: 1fr 1fr;
@@ -25,6 +19,9 @@
   }
   &__link {
     height: 100%;
+    &:hover .article__title {
+      color: var(--color-accent);
+    }
   }
   &__item:nth-child(n + 6) {
     @include for-size(mobile-only) {
@@ -100,6 +97,7 @@
     line-height: 1.2;
     color: var(--color-active-regular);
     margin-bottom: 15px;
+    transition: color var(--animation);
   }
   &__date {
     font-weight: 700;
