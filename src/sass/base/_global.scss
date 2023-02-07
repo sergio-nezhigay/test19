@@ -105,10 +105,11 @@ main {
   height: 4px;
   width: 100%;
   background: rgba(255, 255, 255, 0.5);
-  margin-bottom: 30px;
   &--grey {
     background: var(--color-grey-separator);
-    margin-bottom: 0;
+  }
+  &--with-margin {
+    margin-bottom: 30px;
   }
 }
 
