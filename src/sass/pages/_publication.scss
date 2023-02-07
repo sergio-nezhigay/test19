@@ -13,13 +13,18 @@
     @extend %list;
     display: grid;
     grid-template-columns: 1fr;
+
     gap: 30px;
     @include for-size(tabletsd) {
       grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
     }
     @include for-size(tablethd) {
       grid-template-columns: 1fr 1fr 1fr;
     }
+  }
+  &__item {
+    height: 100%;
   }
 }
 
