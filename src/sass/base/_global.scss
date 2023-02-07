@@ -168,9 +168,11 @@ main {
 }
 
 .button {
+  display: block;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+
   color: var(--color-white);
   background-color: var(--color-active-regular);
   box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
@@ -185,6 +187,11 @@ main {
   &:active {
     cursor: pointer;
     background-color: var(--color-active-active);
+  }
+  &--centered {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
   }
 }
 

@@ -9,11 +9,12 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  @include for-size(mobile-only) {
-    // height: 100vh;
-  }
   @include for-size(tabletsd) {
-    top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  &.light {
+    background-color: var(--color-white);
   }
   &__container {
     display: grid;
