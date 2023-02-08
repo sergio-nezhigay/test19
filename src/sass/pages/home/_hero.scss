@@ -15,7 +15,7 @@
     font-weight: 700;
     font-size: 38px;
     line-height: 1.21;
-    text-align: center;
+    @include white-text;
   }
   &__icon {
     stroke: currentColor;

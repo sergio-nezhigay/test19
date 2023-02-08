@@ -73,6 +73,7 @@
     font-size: 20px;
     line-height: 1.2;
     margin-bottom: 30px;
+    color: var(--color-white);
     position: relative;
     @include for-size(tabletsd) {
       font-size: 30px;
@@ -82,6 +83,7 @@
     font-weight: 400;
     font-size: 19px;
     line-height: 1.57;
+    color: var(--color-white);
   }
   @include for-size(tabletsd) {
     font-size: 30px;
