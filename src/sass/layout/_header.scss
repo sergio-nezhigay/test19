@@ -50,6 +50,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 1.2;
+    color: var(--color-white);
     @include for-size(tabletsd) {
       font-size: 33px;
       line-height: 1.22;
