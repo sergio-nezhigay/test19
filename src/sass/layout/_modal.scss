@@ -18,11 +18,10 @@
     stroke: currentColor;
     align-items: center;
     border-radius: 8px;
-    transition: background-color var(--transition-cubic);
-
-    @include for-size(micro-mobile-only) {
-      top: 15px;
-      right: 15px;
+    transition: background-color var(--animation);
+    @include for-size(mobile-only) {
+      top: 12px;
+      right: 12px;
     }
     &:hover {
       cursor: pointer;
@@ -54,4 +53,9 @@
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
+}
+
+body.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
 }
