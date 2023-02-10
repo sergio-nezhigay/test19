@@ -55,7 +55,13 @@
               difficult it is to find a good candidate with experience in the
               field of information technology in Ukraine.
             </p>
-            <button class="service__button">Free consultation</button>
+            <button
+              class="service__button button"
+              type="button"
+              data-modal-open
+            >
+              Free consultation
+            </button>
             <div class="separator"></div>
             <h2 class="service__subtitle">Services in this area:</h2>
             <ul class="service__list">
@@ -98,6 +104,48 @@
       <include src="./partials/home/publications.html"></include>
     </main>
     <include src="./partials/components/footer.html"></include>
+    <div class="backdrop is-hidden1" data-modal>
+      <div class="modal">
+        <form class="form form--no-radius">
+          <h2 class="titles__second">We would like to help you</h2>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            class="form__input"
+          />
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            class="form__textarea"
+          ></textarea>
+          <p class="form__subtitle">How to answer you?</p>
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            placeholder="Phone number"
+            class="form__input"
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            class="form__input"
+          />
+          <button type="submit" class="button">Send message</button>
+        </form>
+        <div class="modal__close-btn" data-modal-close>
+          <svg height="32" width="32" class="icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
     <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

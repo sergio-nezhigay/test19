@@ -3,6 +3,14 @@
 <symbol id="icon-logo-facebook" viewBox="0 0 33 32">
 <path d="M32.421 16.098c0-8.891-7.163-16.098-16-16.098s-16 7.207-16 16.098c0 8.035 5.851 14.695 13.5 15.902v-11.249h-4.062v-4.653h4.062v-3.547c0-4.035 2.389-6.263 6.043-6.263 1.751 0 3.582 0.314 3.582 0.314v3.962h-2.018c-1.988 0-2.607 1.241-2.607 2.514v3.020h4.437l-0.709 4.653h-3.728v11.249c7.649-1.208 13.5-7.867 13.5-15.902z"></path>
 </symbol>
+<symbol id="icon-close" viewBox="0 0 32 32">
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2" d="M7 7l18 18"></path>
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2" d="M25 7l-18 18"></path>
+</symbol>
+<symbol id="icon-close-modal" viewBox="0 0 32 32">
+<path  d="M7 7l18 18"></path>
+<path   d="M25 7l-18 18"></path>
+</symbol>
 <symbol id="icon-court" viewBox="0 0 32 32">
 <path d="M20.176 10.194c0.366 0.366 0.959 0.367 1.325 0l1.304-1.304c0.366-0.366 0.364-0.959 0-1.325l-3.291-3.29c-0.365-0.366-0.958-0.366-1.324 0l-1.305 1.304c-0.365 0.366-0.365 0.959 0 1.324l3.291 3.292z"></path>
 <path d="M12.383 18.134c0.366 0.364 0.959 0.364 1.324 0l1.304-1.305c0.366-0.365 0.366-0.959 0-1.325l-3.291-3.291c-0.366-0.365-0.959-0.366-1.325 0l-1.304 1.304c-0.366 0.366-0.365 0.959 0 1.325l3.292 3.292z"></path>
@@ -73,10 +81,7 @@
 <symbol id="icon-arrow2" viewBox="0 0 30 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="4.9231" d="M6.95 1.923l14.077 14.077-14.077 14.077"></path>
 </symbol>
-<symbol id="icon-close" viewBox="0 0 32 32">
-<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2" d="M7 7l18 18"></path>
-<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2" d="M25 7l-18 18"></path>
-</symbol>
+
 <symbol id="icon-arrow-down" viewBox="0 0 53 32">
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="5.3333" d="M2.667 2.667l24 24 24-24"></path>
 </symbol>

@@ -119,6 +119,9 @@ main {
   background: var(--color-grey-bg);
   padding: 30px;
   border-radius: 12px;
+  &--no-radius {
+    border-radius: 0;
+  }
   &__input {
     border: 1px solid #ffffff;
     border-radius: 8px;

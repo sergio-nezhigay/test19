@@ -1,0 +1,58 @@
+.modal {
+  position: relative;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  max-width: 650px;
+  background-color: var(--color-grey-bg);
+  transform: scale(1);
+  transition: transform var(--animation);
+  &__close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    color: #ec6f5d;
+    display: block;
+    stroke: currentColor;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color var(--transition-cubic);
+
+    @include for-size(micro-mobile-only) {
+      top: 15px;
+      right: 15px;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: var(--color-grey-separator);
+    }
+  }
+  .is-hidden & {
+    transform: scale(0.5);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #323264b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  pointer-events: all;
+  transition: opacity var(--transition-cubic),
+    visibility var(--transition-cubic);
+}
+
+.is-hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
