@@ -47,8 +47,7 @@
   justify-content: center;
   visibility: visible;
   pointer-events: all;
-  transition: opacity var(--transition-cubic),
-    visibility var(--transition-cubic);
+  transition: opacity var(--animation), visibility var(--animation);
 }
 
 .is-hidden {
