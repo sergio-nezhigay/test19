@@ -15,6 +15,7 @@
     font-weight: 700;
     font-size: 38px;
     line-height: 1.21;
+    text-align: center;
     @include white-text;
   }
   &__icon {
@@ -25,8 +26,7 @@
     opacity: 1;
   }
   &__circle {
-    border: 2px solid var(--color-white);
-    opacity: 0.5;
+    border: 2px solid transparentize(#ffffff, 0.5);
     color: var(--color-white);
     border-radius: 50%;
     display: flex;
@@ -37,7 +37,7 @@
     transition: color var(--animation), border-color var(--animation);
     &:hover {
       color: var(--color-accent);
-      border-color: var(--color-accent);
+      border-color: transparentize(#f0145a, 0.5);
       cursor: pointer;
     }
   }
