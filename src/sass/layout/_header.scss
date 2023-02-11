@@ -177,10 +177,11 @@
     appearance: none;
     display: none;
     &:checked + label {
-      background-color: #f0145a;
+      background-color: var(--color-accent);
     }
     .light &:checked + label {
       color: var(--color-white);
+      background-color: var(--color-accent);
     }
   }
   &__label {
@@ -206,9 +207,8 @@
     }
     .light & {
       color: #b3b3ba;
-      &:hover,
-      &:active {
-        color: var(--color-accent);
+      &:hover {
+        // color: var(--color-accent);
         background: var(--color-grey-bg);
       }
     }
