@@ -8,9 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include for-size(tabletsd) {
-    background-size: contain;
-  }
   &__title {
     font-weight: 700;
     font-size: 38px;
