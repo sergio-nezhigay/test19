@@ -1,0 +1,2 @@
+!function(){var e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),body:document.querySelector("body"),modal:document.querySelector("[data-modal]")};function o(){e.modal.classList.toggle("is-hidden"),e.body.classList.toggle("modal-open")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o),e.body.addEventListener("click",(function(e){e.target.classList.contains("backdrop")&&o()}))}();
+//# sourceMappingURL=services.cd60ac16.js.map
