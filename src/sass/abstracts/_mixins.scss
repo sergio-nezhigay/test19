@@ -3,12 +3,8 @@
 //============
 
 @mixin for-size($range) {
-  @if $range == micro-mobile-only {
+  @if $range == mobile-only {
     @media screen and (max-width: #{$mobile - 0.02}) {
-      @content;
-    }
-  } @else if $range == mobile-only {
-    @media screen and (max-width: #{$tabletsd - 0.02}) {
       @content;
     }
   } @else if $range == mobile {
@@ -16,27 +12,19 @@
       @content;
     }
   } @else if $range == tablet-only {
-    @media screen and (min-width: $tabletsd) and (max-width: #{$desktopsd - 0.02}) {
+    @media screen and (min-width: $tablet) and (max-width: #{$desktop - 0.02}) {
       @content;
     }
-  } @else if $range == tabletsd {
-    @media screen and (min-width: $tabletsd) {
+  } @else if $range == tablet {
+    @media screen and (min-width: $tablet) {
       @content;
     }
-  } @else if $range == tablethd {
-    @media screen and (min-width: $tablethd) {
-      @content;
-    }
-  } @else if $range == desktopsd {
-    @media screen and (min-width: $desktopsd) {
-      @content;
-    }
-  } @else if $range == desktophd {
-    @media screen and (min-width: $desktophd) {
+  } @else if $range == desktop {
+    @media screen and (min-width: $desktop) {
       @content;
     }
   } @else if $range == notDesktop {
-    @media screen and (max-width: #{$desktopsd - 0.02}) {
+    @media screen and (max-width: #{$desktop - 0.02}) {
       @content;
     }
   }
@@ -47,20 +35,4 @@
   content: '';
   position: absolute;
   display: block;
-}
-
-//use for red text
-
-@mixin red-text {
-  background: #ef8080;
-  background: linear-gradient(to right, #ef8080 0%, #f0145a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@mixin white-text {
-  background: #ffffff;
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }

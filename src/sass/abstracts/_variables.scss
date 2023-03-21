@@ -3,35 +3,16 @@
 //============
 
 :root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-accent: #f0145a;
-  --color-main-regular: #323264;
-  --color-main-alt: #46466e;
-  --color-active-regular: #24a3ff;
-  --color-active-hover: #0085ff;
-  --color-active-active: #006ccf;
-  --color-grey-text: #b3b3ba;
-  --color-grey-bg: #f5f5fa;
-  --color-grey-bg-alt: #ededf7;
-  --color-grey-separator: #e6e6f0;
+  --color-black: #111321;
+  --color-white: #dbcccc;
+  --color-accent: #4440f6;
+  --color-grey: #a8a8a8;
 
-  --font-primary: 'Montserrat', sans-serif;
+  --font-primary: 'Manrope', sans-serif;
 
-  --animation: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  --gradient-Supersoft: linear-gradient(
-    228.57deg,
-    #323264 11.93%,
-    #323264 57.17%,
-    #643e72 87.46%
-  );
-  --gradient-red-text: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
-  --gradient-red-icon: linear-gradient(180deg, #ef8080 0%, #f0145a 100%);
+  --animation: 2.3s cubic-bezier(0.19, 1, 0.22, 1);
 
-  --padding-mobile: 30px;
-  --padding-tablet: 60px;
-  --padding-desktopsd: 60px;
-  --padding-desktophd: 160px;
+  --padding: 16px;
 }
 
 .light {
@@ -41,11 +22,6 @@
 
 //BREAKPOINTS
 
-$mobile: 375px;
-$tabletsd: 768px;
-$tablethd: 1024px;
-$desktopsd: 1440px;
-$desktophd: 1920px;
-
-$nav-link-transition: color 2.15s ease-in-out,
-  background-color 2.15s ease-in-out, border-color 2.15s ease-in-out;
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1280px;

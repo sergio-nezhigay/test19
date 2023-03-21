@@ -3,65 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legal - Home Page</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./images/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./images/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+    <title>OOOO - Home Page</title>
+
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
-    <include
-      src="./partials/components/header.html"
-      locals='{
-    "type": "dark",
-    "breadcrumbsName": ""
-}'
-    ></include>
-    <main>
-      <h1>test1</h1>
-      <div class="supersoft-bg">
-        <include src="./partials/home/hero.html"></include>
-        <include src="./partials/home/tabs.html"></include>
-        <include src="./partials/home/services.html"></include>
-      </div>
-      <include src="./partials/home/crew.html"></include>
-      <include src="./partials/home/brands.html"></include>
-      <include src="./partials/home/publications.html"></include>
-    </main>
-    <include src="./partials/components/footer.html"></include>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+    <include src="./partials/components/header.html"></include>
+    <include src="./partials/components/cards.html"></include>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-    <script src="./js/mobile-menu.js"></script>
-    <script src="./js/swiper.js"></script>
-    <script src="./js/scroll.js"></script>
+    <!-- <include src="./partials/components/footer.html"></include> -->
+    <script src="./js/mobile-menu.js" type="module"></script>
   </body>
 </html>

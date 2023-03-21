@@ -4,31 +4,11 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 var(--padding-mobile);
-  @include for-size(tabletsd) {
-    padding: 0 var(--padding-tablet);
-  }
-  @include for-size(tablethd) {
-    padding: 0 var(--padding-tablet);
-  }
-  @include for-size(desktopsd) {
-    padding: 0 var(--padding-desktopsd);
-  }
-  @include for-size(desktophd) {
-    padding: 0 var(--padding-desktophd);
-  }
-  &--wide {
-    @include for-size(desktopsd) {
-      padding: 0 180px;
-    }
-    @include for-size(desktophd) {
-      padding: 0 280px;
-    }
-  }
+  padding: 0 var(--padding);
 }
 
 body {
-  color: var(--color-white);
+  color: var(--color-black);
   background: var(--color-white);
   font-family: var(--font-primary);
   letter-spacing: 0.03em;
