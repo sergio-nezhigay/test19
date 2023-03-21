@@ -41,7 +41,8 @@ function addFavoriteField(articles) {
 
 function onCardClick(e) {
   if (!e.target.dataset) return;
-  if (e.target.dataset.favorite.includes('true')) {
+
+  if (e.target.innerText.includes('Remove from Favorites')) {
     removeFromStorage(e.target.dataset.id);
     e.target.innerText = 'Add to Favorite';
   } else {
