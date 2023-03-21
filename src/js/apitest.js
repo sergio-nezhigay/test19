@@ -1,19 +1,53 @@
-const catName = 'automobiles';
-
 import { NytimesAPI } from './nytimesAPI';
 import { elements } from './elements';
 import { cardsMarkup } from './markup';
+import { addToStorage, getFromStorage, removeFromStorage } from './storage';
 
 export async function apitest() {
   const nytimesAPI = new NytimesAPI();
-  let { results } = await nytimesAPI.fetchCategories();
-  console.log('🚀 ~ file: apitest.js:22 ~ fetch1 ~ results:', results);
-  const results2 = await nytimesAPI.fetchNewsListFromCategorie(catName);
-  console.log('🚀 ~ file: apitest.js:13 ~ apitest ~ results2:', results2);
-  let response = await nytimesAPI.searchNews('trump');
-  console.log('🚀 ~ file: apitest.js:13 ~ apitest ~ response:', response);
+  elements.cards.addEventListener('click', onCardClick);
   let popular = await nytimesAPI.popularNews();
-  console.log('🚀 ~ file: apitest.js:13 ~ apitest ~ popular:', popular);
+  popular = addFavoriteField(popular);
+  console.log('🚀 Popular News', popular);
   const markup = cardsMarkup(popular);
   elements.cards.insertAdjacentHTML('beforeend', markup);
+  // Other news search api tests
+  let { results } = await nytimesAPI.fetchCategories();
+  console.log('🚀 Categorie names list:', results);
+  const newsFromSingleCatagorie = await nytimesAPI.fetchNewsListFromCategorie(
+    'automobiles'
+  );
+  console.log('🚀 All news from single catagorie:', newsFromSingleCatagorie);
+  let newsFromWordSearch = await nytimesAPI.searchNews('trump');
+  console.log('🚀All news from search by word:', newsFromWordSearch);
 }
+
+function addFavoriteField(articles) {
+  const favoriteIds = getFromStorage();
+  return articles.map(article => {
+    if (favoriteIds.includes(article.url)) {
+      return {
+        ...article,
+        favorite: true,
+      };
+    } else {
+      return {
+        ...article,
+        favorite: false,
+      };
+    }
+  });
+}
+
+function onCardClick(e) {
+  if (!e.target.dataset) return;
+  if (e.target.dataset.favorite.includes('true')) {
+    removeFromStorage(e.target.dataset.id);
+    e.target.innerText = 'Add to Favorite';
+  } else {
+    addToStorage(e.target.dataset.id);
+    e.target.innerText = 'Remove from Favorites';
+  }
+}
+
+apitest();

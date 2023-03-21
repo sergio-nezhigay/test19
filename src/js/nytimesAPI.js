@@ -43,6 +43,8 @@ class NytimesAPI {
         title: article.title,
         date: article.updated,
         abstract: article.abstract,
+        url: article.url,
+        section: article.section,
         imageUrl,
       };
     });
@@ -84,6 +86,7 @@ class NytimesAPI {
         title: article.headline.main,
         date: article.pub_date,
         abstract: article.abstract,
+        url: article.url,
         imageUrl,
       };
     });

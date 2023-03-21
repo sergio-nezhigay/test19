@@ -24,5 +24,3 @@ const toggleMenu = () => {
 openMenuBtn.addEventListener('click', toggleMenu);
 closeMenuBtn.addEventListener('click', toggleMenu);
 backdropEl.addEventListener('click', toggleMenu);
-
-apitest();
