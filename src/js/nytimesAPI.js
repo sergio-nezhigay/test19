@@ -55,6 +55,9 @@ class NytimesAPI {
   }
 
   selectByFormat(metadataArray) {
+    if (!metadataArray) {
+      return null;
+    }
     const image = metadataArray.find(
       media => media.format === 'mediumThreeByTwo440'
     );
@@ -62,18 +65,22 @@ class NytimesAPI {
   }
 
   async fetchNewsListFromCategorie(categorie) {
-    const { results } = await this.fetchAPI(
-      NEWS_CATEGORIES_SUFFIX + categorie + '.json'
-    );
-    return results.map(article => {
-      const imageUrl = this.selectByFormat(article.multimedia);
-      return {
+    try {
+      const { results } = await this.fetchAPI(
+        NEWS_CATEGORIES_SUFFIX + encodeURIComponent(categorie) + '.json'
+      );
+      return results.map(article => ({
         title: article.title,
-        date: article.updated,
+        date: article.published_date,
         abstract: article.abstract,
-        imageUrl,
-      };
-    });
+        section: article.section,
+        url: article.url,
+        imageUrl: this.selectByFormat(article.multimedia),
+      }));
+    } catch (error) {
+      console.error(`Error fetching news list from category: ${error.message}`);
+      return [];
+    }
   }
 
   async searchNews(term) {

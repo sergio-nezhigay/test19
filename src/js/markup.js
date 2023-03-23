@@ -1,6 +1,28 @@
+export function buttonsMarkup(categories) {
+  const markup = categories
+    .map(({ display_name, section }) => {
+      return `
+      <li><button data-category="${section}" class="categories__button">${display_name}</button></li>
+  `;
+    })
+    .join('');
+  return `<ul class="categories__list">${markup}</ul>`;
+}
+
+export function selectMarkup(categories) {
+  const markup = categories
+    .map(({ display_name, section }) => {
+      return `
+      <option value="${section}">${display_name}</option>
+  `;
+    })
+    .join('');
+  return `<select class="categories__select">${markup}</select>`;
+}
+
 export function articlesMarkup(articles) {
   const markup = articles
-    .slice(0, 7)
+    .slice(0, 8)
     .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
       const buttonText = favorite ? 'Remove from Favorites' : 'Add to Favorite';
       return `
