@@ -1,3 +1,4 @@
 export const elements = {
-  cards: document.querySelector('.cards'),
+  articles: document.querySelector('.articles'),
+  categories: document.querySelector('.categories'),
 };

@@ -1,30 +1,31 @@
-export function cardsMarkup(articles) {
+export function articlesMarkup(articles) {
   const markup = articles
     .slice(0, 7)
-    .map(({ abstract, date, imageUrl, title, url, section, favorite }) => {
+    .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
       const buttonText = favorite ? 'Remove from Favorites' : 'Add to Favorite';
-      return `<ul>
-    <li class="cards__item">
-      <div class="cards__image-wrapper">
-        <img src="${imageUrl}" class="cards__image" />
-        <p class="cards__category">${section}</p>
-        <button class="cards__button" data-id="${url}" data-favorite="${favorite}">${buttonText}</button>
+      return `
+    <li class="articles__item">
+      <div class="articles__image-wrapper">
+        <img src="${imageUrl}" class="articles__image" />
+        <p class="articles__category">${section}</p>
+        <button class="articles__button" data-id="${url}" data-favorite="${favorite}">${buttonText}</button>
       </div>
-      <div class="cards__details">
-        <h2 class="cards__title">
+      <div class="articles__details">
+        <h2 class="articles__title">
           ${title}
         </h2>
-        <p class="cards__abstract">
+        <p class="articles__abstract">
           ${abstract}
         </p>
-        <div class="cards__row">
-          <p class="cards__date">${date.split(' ')[0]}</p>
-          <a href="${url}" class="cards__link">Read more</a>
+        <div class="articles__row">
+          <p class="articles__date">${date.split(' ')[0]}</p>
+
+          <a href="${url}" class="articles__link">Read more</a>
         </div>
       </div>
     </li>
-  </ul>`;
+  `;
     })
     .join('');
-  return markup;
+  return `<ul class="articles">${markup}</ul>`;
 }

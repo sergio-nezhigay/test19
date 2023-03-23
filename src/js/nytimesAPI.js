@@ -4,7 +4,7 @@ const API_KEY = 'shLcRksRAhdUD0ieGQyvYj4xaGnwKCJl';
 const BASE_URL = 'https://api.nytimes.com/svc';
 const NY_URL = 'https://www.nytimes.com/';
 const CATEGORIES_SUFFIX = '/news/v3/content/section-list.json';
-const POPULAR_SUFFIX = '/mostpopular/v2/viewed/1.json';
+const POPULAR_SUFFIX = '/mostpopular/v2/viewed/30.json';
 const NEWS_CATEGORIES_SUFFIX = '/news/v3/content/inyt/';
 const SEARCH_SUFFIX = '/search/v2/articlesearch.json';
 
@@ -36,9 +36,13 @@ class NytimesAPI {
   }
 
   async popularNews() {
-    const { results } = await this.fetchAPI(POPULAR_SUFFIX);
+    const params = {};
+    const { results } = await this.fetchAPI(POPULAR_SUFFIX, params);
+    let imageUrl;
     return results.map(article => {
-      const imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
+      if (article.media.length > 0)
+        imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
+
       return {
         title: article.title,
         date: article.updated,
@@ -73,9 +77,10 @@ class NytimesAPI {
   }
 
   async searchNews(term) {
+    const params = { q: term, offset: 3, limit: 20 };
     const {
       response: { docs },
-    } = await this.fetchAPI(SEARCH_SUFFIX, { q: term });
+    } = await this.fetchAPI(SEARCH_SUFFIX, params);
 
     return docs.map(article => {
       const imageXlarge = article.multimedia.find(
