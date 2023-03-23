@@ -5,12 +5,11 @@ import { makeCategoryButtonsAndSelect } from './categories';
 import { articlesMarkup } from './markup';
 
 const nytimesAPI = new NytimesAPI();
+elements.articles.addEventListener('click', handleFavoriteClick);
+elements.categories.addEventListener('click', onCategoriesClick);
+elements.categories.addEventListener('change', onCategoriesSelect);
 
-export async function apitest() {
-  elements.articles.addEventListener('click', handleFavoriteClick);
-  elements.categories.addEventListener('click', onCategoriesClick);
-  elements.categories.addEventListener('change', onCategoriesSelect);
-
+async function init() {
   let popular = await nytimesAPI.popularNews();
   popular = addFavoriteField(popular);
   const markup = articlesMarkup(popular);
@@ -32,8 +31,7 @@ async function onCategoriesSelect(e) {
 
 async function makeRequestAndMarkup(term) {
   const newsCatagory = await nytimesAPI.fetchNewsListFromCategorie(term);
-  const markup = articlesMarkup(newsCatagory);
-  elements.articles.innerHTML = markup;
+  elements.articles.innerHTML = articlesMarkup(newsCatagory);
 }
 
-apitest();
+init();

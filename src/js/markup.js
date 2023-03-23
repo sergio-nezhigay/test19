@@ -25,12 +25,21 @@ export function articlesMarkup(articles) {
     .slice(0, 8)
     .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
       const buttonText = favorite ? 'Remove from Favorites' : 'Add to Favorite';
+      const testObjectForButton = {
+        abstract,
+        imageUrl,
+        title,
+        url,
+        section,
+        favorite,
+      };
+      const stringForButton = JSON.stringify(testObjectForButton);
       return `
     <li class="articles__item">
       <div class="articles__image-wrapper">
         <img src="${imageUrl}" class="articles__image" />
         <p class="articles__category">${section}</p>
-        <button class="articles__button" data-id="${url}" data-favorite="${favorite}">${buttonText}</button>
+        <button class="articles__button" data-id="${url}" data-favorite="${favorite}" data-info="${stringForButton}">${buttonText}</button>
       </div>
       <div class="articles__details">
         <h2 class="articles__title">
