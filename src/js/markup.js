@@ -9,18 +9,8 @@ export function buttonsMarkup(categories) {
   return `<ul class="categories__list">${markup}</ul>`;
 }
 
-export function selectMarkup(categories) {
-  const markup = categories
-    .map(({ display_name, section }) => {
-      return `
-      <option value="${section}">${display_name}</option>
-  `;
-    })
-    .join('');
-  return `<select class="categories__select">${markup}</select>`;
-}
-
 export function articlesMarkup(articles) {
+  console.log('articlesMarkup');
   const markup = articles
     .slice(0, 8)
     .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
@@ -59,4 +49,27 @@ export function articlesMarkup(articles) {
     })
     .join('');
   return `<ul class="articles">${markup}</ul>`;
+}
+
+export function selectMarkup(categories) {
+  const markup = categories
+    .map(({ display_name, section }) => {
+      return `
+      <li class="dropdown__select-option" data-category="${section}" role="option">${display_name}</li>
+  `;
+    })
+    .join('');
+  return `<div class="dropdown">
+    <input type="checkbox" class="dropdown__switch" id="filter-switch" hidden />
+    <label for="filter-switch" class="dropdown__options-filter">
+      <ul class="dropdown__filter" role="listbox" tabindex="-1">
+        <li class="dropdown__filter-selected" aria-selected="true">Others</li>
+        <li>
+          <ul class="dropdown__select">
+            ${markup}
+          </ul>
+        </li>
+      </ul>
+    </label>
+  </div>`;
 }

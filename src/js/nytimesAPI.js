@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.nytimes.com/svc';
 const NY_URL = 'https://www.nytimes.com/';
 const CATEGORIES_SUFFIX = '/news/v3/content/section-list.json';
 const POPULAR_SUFFIX = '/mostpopular/v2/viewed/30.json';
-const NEWS_CATEGORIES_SUFFIX = '/news/v3/content/inyt/';
+const NEWS_CATEGORIES_SUFFIX = '/news/v3/content/all/';
 const SEARCH_SUFFIX = '/search/v2/articlesearch.json';
 
 const axiosInstance = axios.create({
@@ -40,12 +40,13 @@ class NytimesAPI {
     const { results } = await this.fetchAPI(POPULAR_SUFFIX, params);
     let imageUrl;
     return results.map(article => {
+      // console.log('🚀 ~popularNews ~ article:', article);
       if (article.media.length > 0)
         imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
 
       return {
         title: article.title,
-        date: article.updated,
+        date: article.published_date,
         abstract: article.abstract,
         url: article.url,
         section: article.section,
@@ -65,18 +66,22 @@ class NytimesAPI {
   }
 
   async fetchNewsListFromCategorie(categorie) {
+    const params = { offset: 0, limit: 8 };
+    const url =
+      NEWS_CATEGORIES_SUFFIX + encodeURIComponent(categorie) + '.json';
     try {
-      const { results } = await this.fetchAPI(
-        NEWS_CATEGORIES_SUFFIX + encodeURIComponent(categorie) + '.json'
-      );
-      return results.map(article => ({
-        title: article.title,
-        date: article.published_date,
-        abstract: article.abstract,
-        section: article.section,
-        url: article.url,
-        imageUrl: this.selectByFormat(article.multimedia),
-      }));
+      const { results } = await this.fetchAPI(url, params);
+      return results.map(article => {
+        console.log('🚀  fetchNewsListFromCategorie ~ article:', article);
+        return {
+          title: article.title,
+          date: article.published_date,
+          abstract: article.abstract,
+          section: article.section,
+          url: article.url,
+          imageUrl: this.selectByFormat(article.multimedia),
+        };
+      });
     } catch (error) {
       console.error(`Error fetching news list from category: ${error.message}`);
       return [];
@@ -84,7 +89,7 @@ class NytimesAPI {
   }
 
   async searchNews(term) {
-    const params = { q: term, offset: 3, limit: 20 };
+    const params = { q: term, offset: 0, limit: 20 };
     const {
       response: { docs },
     } = await this.fetchAPI(SEARCH_SUFFIX, params);
