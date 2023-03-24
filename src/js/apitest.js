@@ -1,7 +1,7 @@
 import { NytimesAPI } from './nytimesAPI';
 import { elements } from './elements';
 import { addFavoriteField, handleFavoriteClick } from './favorites';
-import { makeCategoryButtonsAndSelect } from './categoryFilter';
+import { makeCategoryButtonsAndDropdown } from './categoryFilter';
 import { articlesMarkup } from './markup';
 
 const nytimesAPI = new NytimesAPI();
@@ -13,7 +13,7 @@ async function init() {
   const markup = articlesMarkup(popular);
   elements.articles.insertAdjacentHTML('beforeend', markup);
   let { results } = await nytimesAPI.fetchCategories();
-  makeCategoryButtonsAndSelect(results);
+  makeCategoryButtonsAndDropdown(results);
 }
 
 init();

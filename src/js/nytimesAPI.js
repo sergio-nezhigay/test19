@@ -72,7 +72,7 @@ class NytimesAPI {
     try {
       const { results } = await this.fetchAPI(url, params);
       return results.map(article => {
-        console.log('🚀  fetchNewsListFromCategorie ~ article:', article);
+        // console.log('🚀  fetchNewsListFromCategorie ~ article:', article);
         return {
           title: article.title,
           date: article.published_date,

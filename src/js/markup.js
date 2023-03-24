@@ -51,7 +51,7 @@ export function articlesMarkup(articles) {
   return `<ul class="articles">${markup}</ul>`;
 }
 
-export function selectMarkup(categories) {
+export function dropdownMarkup(categories) {
   const markup = categories
     .map(({ display_name, section }) => {
       return `

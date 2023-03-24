@@ -1,5 +1,5 @@
 import { elements } from './elements';
-import { buttonsMarkup, selectMarkup } from './markup';
+import { buttonsMarkup, dropdownMarkup } from './markup';
 import { makeRequestAndMarkup } from './newsAPI';
 
 const MIN_LARGE_SCREEN_WIDTH = 1280;
@@ -8,7 +8,7 @@ const LARGE_SCREEN_BUTTON_QUANTITY = 6;
 const MEDIUM_SCREEN_BUTTON_QUANTITY = 4;
 const DEFAULT_BUTTON_QUANTITY = 0;
 
-export function makeCategoryButtonsAndSelect(categories) {
+export function makeCategoryButtonsAndDropdown(categories) {
   const categoriesButtonQty = categoryButtonsQuantity();
   elements.categories.insertAdjacentHTML(
     'beforeend',
@@ -16,16 +16,19 @@ export function makeCategoryButtonsAndSelect(categories) {
   );
   elements.categories.insertAdjacentHTML(
     'beforeend',
-    selectMarkup(categories.slice(categoriesButtonQty))
+    dropdownMarkup(categories.slice(categoriesButtonQty))
   );
-  initSelect();
+  initDropdown();
   elements.categories.addEventListener('click', onCategoriesClick);
 }
 
 async function onCategoriesClick(e) {
-  console.log(e.target);
   const category = e.target.dataset?.category;
+
   if (!category) return;
+  if (e.target.nodeName === 'BUTTON') {
+    document.querySelector('.dropdown__filter-selected').textContent = 'Other';
+  }
   await makeRequestAndMarkup(category);
 }
 
@@ -41,7 +44,7 @@ function categoryButtonsQuantity() {
   }
 }
 
-function initSelect() {
+function initDropdown() {
   // Change option selected
   const label = document.querySelector('.dropdown__filter-selected');
   const options = Array.from(
