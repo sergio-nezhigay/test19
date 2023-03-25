@@ -5,7 +5,14 @@
 .container {
   margin: 0 auto;
   padding: 0 var(--padding);
-  max-width: $desktop;
+  max-width: $mobile;
+
+  @include for-size(tablet) {
+    max-width: $tablet;
+  }
+  @include for-size(desktop) {
+    max-width: $desktop;
+  }
 }
 
 body {

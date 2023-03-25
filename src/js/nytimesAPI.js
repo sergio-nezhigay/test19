@@ -1,23 +1,31 @@
-import axios from 'axios';
+import {
+  fetchQuery,
+  fetchPopular,
+  fetchCategory,
+  fetchCategories,
+} from './fetchArticles';
 
-const API_KEY = 'shLcRksRAhdUD0ieGQyvYj4xaGnwKCJl';
-const BASE_URL = 'https://api.nytimes.com/svc';
 const NY_URL = 'https://www.nytimes.com/';
-const CATEGORIES_SUFFIX = '/news/v3/content/section-list.json';
-const POPULAR_SUFFIX = '/mostpopular/v2/viewed/30.json';
-const NEWS_CATEGORIES_SUFFIX = '/news/v3/content/all/';
-const SEARCH_SUFFIX = '/search/v2/articlesearch.json';
-
-const axiosInstance = axios.create({
-  baseURL: BASE_URL,
-  params: {
-    'api-key': API_KEY,
-  },
-});
 
 class NytimesAPI {
   constructor() {
-    // this._currentList = [];
+    this.reset();
+  }
+
+  reset() {
+    this._searchType = null;
+    this._currentCategory = null;
+    this._word = null;
+    this._popular = null;
+    this._num_results = 0;
+  }
+
+  getNextDataFromServer(pageNumber) {
+    if (this._currentCategory) {
+      return fetchNewsListFromCategorie(this._currentCategory, pageNumber);
+    } else if (this._word) {
+      return searchNews(this._currentWord, pageNumber);
+    } else return popularNews(pageNumber);
   }
 
   async fetchAPI(suffix, params = {}) {
@@ -31,28 +39,35 @@ class NytimesAPI {
     }
   }
 
-  async fetchCategories() {
-    return this.fetchAPI(CATEGORIES_SUFFIX);
+  async categoriesList() {
+    const { data } = await fetchCategories();
+    return data.results;
   }
 
-  async popularNews() {
-    const params = {};
-    const { results } = await this.fetchAPI(POPULAR_SUFFIX, params);
-    let imageUrl;
-    return results.map(article => {
-      // console.log('🚀 ~popularNews ~ article:', article);
-      if (article.media.length > 0)
-        imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
+  async popularNews({ pageNumber, limit }) {
+    if (pageNumber === 1) limit--;
+    if (!this._popular) {
+      let imageUrl = '';
+      const { data } = await fetchPopular();
+      const { results, num_results } = data;
+      this._num_results = num_results;
+      this._popular = results.map(article => {
+        if (article.media.length > 0)
+          imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
 
-      return {
-        title: article.title,
-        date: article.published_date,
-        abstract: article.abstract,
-        url: article.url,
-        section: article.section,
-        imageUrl,
-      };
-    });
+        return {
+          title: article.title,
+          date: article.published_date,
+          abstract: article.abstract,
+          url: article.url,
+          section: article.section,
+          imageUrl,
+        };
+      });
+    }
+    const startIndex = (pageNumber - 1) * limit;
+    const endIndex = startIndex + limit;
+    return this._popular.slice(startIndex, endIndex);
   }
 
   selectByFormat(metadataArray) {
@@ -65,14 +80,20 @@ class NytimesAPI {
     return image ? image.url : null;
   }
 
-  async fetchNewsListFromCategorie(categorie) {
-    const params = { offset: 0, limit: 8 };
-    const url =
-      NEWS_CATEGORIES_SUFFIX + encodeURIComponent(categorie) + '.json';
+  async fetchNewsListFromCategorie({ category, pageNumber, limit }) {
+    if (pageNumber === 1) limit--;
     try {
-      const { results } = await this.fetchAPI(url, params);
+      const { data } = await fetchCategory({
+        category,
+        pageNumber,
+        limit,
+      });
+      const { results, num_results } = data;
+
+      this._currentCategory = category;
+      this._num_results = num_results;
+
       return results.map(article => {
-        // console.log('🚀  fetchNewsListFromCategorie ~ article:', article);
         return {
           title: article.title,
           date: article.published_date,
@@ -88,13 +109,13 @@ class NytimesAPI {
     }
   }
 
-  async searchNews(term) {
-    const params = { q: term, offset: 0, limit: 20 };
-    const {
-      response: { docs },
-    } = await this.fetchAPI(SEARCH_SUFFIX, params);
-
-    return docs.map(article => {
+  async searchNews({ word, pageNumber, limit }) {
+    if (pageNumber === 1) limit--;
+    const { data } = await fetchQuery({ word, pageNumber });
+    const { docs, meta } = data.response;
+    this._num_results = meta.hits;
+    this._word = word;
+    const result = docs.map(article => {
       const imageXlarge = article.multimedia.find(
         media => media.subtype === 'xlarge'
       );
@@ -104,9 +125,15 @@ class NytimesAPI {
         date: article.pub_date,
         abstract: article.abstract,
         url: article.url,
+        section: article.section_name,
         imageUrl,
       };
     });
+    return result.slice(0, limit);
+  }
+
+  get numResults() {
+    return this._num_results;
   }
 }
 

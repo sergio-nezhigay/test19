@@ -1,5 +1,3 @@
-import { apitest } from './apitest';
-
 const mobileMenu = document.querySelector('.js-menu');
 const openMenuBtn = document.querySelector('.js-open-menu');
 const closeMenuBtn = document.querySelector('.js-menu__close');

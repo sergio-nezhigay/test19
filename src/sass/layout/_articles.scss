@@ -1,10 +1,19 @@
 .articles {
   background: #f4f4f4;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  margin: 0 auto;
+
   &__item {
-    width: 395px;
+    width: 288px;
+    @include for-size(tablet) {
+      width: 353px;
+    }
+    @include for-size(desktop) {
+      width: 394px;
+    }
   }
   &__image-wrapper {
     position: relative;

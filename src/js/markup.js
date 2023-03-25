@@ -10,9 +10,7 @@ export function buttonsMarkup(categories) {
 }
 
 export function articlesMarkup(articles) {
-  console.log('articlesMarkup');
   const markup = articles
-    .slice(0, 8)
     .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
       const buttonText = favorite ? 'Remove from Favorites' : 'Add to Favorite';
       const testObjectForButton = {
@@ -48,7 +46,7 @@ export function articlesMarkup(articles) {
   `;
     })
     .join('');
-  return `<ul class="articles">${markup}</ul>`;
+  return markup;
 }
 
 export function dropdownMarkup(categories) {

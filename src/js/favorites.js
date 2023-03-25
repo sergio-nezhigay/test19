@@ -1,4 +1,3 @@
-import { addToStorage, removeFromStorage } from './storage.js';
 import { addToStorage, getFromStorage, removeFromStorage } from './storage';
 
 export function addFavoriteField(articles) {

@@ -6,7 +6,9 @@
   &__list {
     display: flex;
     gap: 16px;
-    width: 100%;
+    @include for-size(tablet) {
+      margin-right: 16px;
+    }
   }
 
   &__button {
@@ -29,8 +31,10 @@
 }
 
 .dropdown {
-  width: 200px;
-  margin: 0 20px;
+  min-width: 130px;
+  width: auto;
+  white-space: nowrap;
+
   background-color: #f8f8f8;
   &__switch:checked + &__options-filter &__select {
     transform: scaleY(1);
@@ -47,7 +51,7 @@
   &__filter {
     position: relative;
     display: flex;
-    padding: 7px 14px;
+    padding: 8px 50px 8px 14px;
     color: #4440f6;
     background-color: #fff;
     border: 1px solid #4440f7;
@@ -99,7 +103,7 @@
   }
 
   &__select-option {
-    padding: 7px 7px 7px 14px;
+    padding: 8px 8px 8px 14px;
     background-color: #f8f8f8;
     transition: 0.3s;
     color: #4440f6;
