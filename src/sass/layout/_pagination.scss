@@ -1,0 +1,46 @@
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px #d3d3d3;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.pg-link {
+  pointer-events: none;
+  text-decoration: none;
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #111321;
+}
+
+.pg-item {
+  overflow: hidden;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  border: 1px solid #4440f6;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &.active,
+  &:hover,
+  &:focus {
+    background-color: #4440f6;
+  }
+}

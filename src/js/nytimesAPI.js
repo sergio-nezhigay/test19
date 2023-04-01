@@ -10,22 +10,22 @@ const NY_URL = 'https://www.nytimes.com/';
 class NytimesAPI {
   constructor() {
     this.reset();
+    this._limit = 0;
   }
 
   reset() {
-    this._searchType = null;
-    this._currentCategory = null;
+    this._category = null;
     this._word = null;
     this._popular = null;
     this._num_results = 0;
   }
 
-  getNextDataFromServer(pageNumber) {
-    if (this._currentCategory) {
-      return fetchNewsListFromCategorie(this._currentCategory, pageNumber);
+  async getNextDataFromServer(pageNumber) {
+    if (this._category) {
+      return await this.fetchNewsListFromCategorie(pageNumber);
     } else if (this._word) {
       return searchNews(this._currentWord, pageNumber);
-    } else return popularNews(pageNumber);
+    } else return await this.popularNews(pageNumber);
   }
 
   async fetchAPI(suffix, params = {}) {
@@ -44,11 +44,12 @@ class NytimesAPI {
     return data.results;
   }
 
-  async popularNews({ pageNumber, limit }) {
-    if (pageNumber === 1) limit--;
+  async popularNews(pageNumber = 1) {
+    const newsPerPage = pageNumber === 1 ? this._limit - 1 : this._limit;
     if (!this._popular) {
       let imageUrl = '';
       const { data } = await fetchPopular();
+
       const { results, num_results } = data;
       this._num_results = num_results;
       this._popular = results.map(article => {
@@ -65,8 +66,8 @@ class NytimesAPI {
         };
       });
     }
-    const startIndex = (pageNumber - 1) * limit;
-    const endIndex = startIndex + limit;
+    const startIndex = (pageNumber - 1) * newsPerPage;
+    const endIndex = startIndex + newsPerPage;
     return this._popular.slice(startIndex, endIndex);
   }
 
@@ -80,19 +81,16 @@ class NytimesAPI {
     return image ? image.url : null;
   }
 
-  async fetchNewsListFromCategorie({ category, pageNumber, limit }) {
-    if (pageNumber === 1) limit--;
+  async fetchNewsListFromCategorie(pageNumber) {
+    const newsPerPage = pageNumber === 1 ? this._limit - 1 : this._limit;
     try {
       const { data } = await fetchCategory({
-        category,
+        category: this._category,
         pageNumber,
-        limit,
+        limit: newsPerPage,
       });
       const { results, num_results } = data;
-
-      this._currentCategory = category;
       this._num_results = num_results;
-
       return results.map(article => {
         return {
           title: article.title,
@@ -130,6 +128,18 @@ class NytimesAPI {
       };
     });
     return result.slice(0, limit);
+  }
+
+  set limit(newLimit) {
+    this._limit = newLimit;
+  }
+
+  set category(newCategory) {
+    this._category = newCategory;
+  }
+
+  get limit() {
+    return this._limit;
   }
 
   get numResults() {

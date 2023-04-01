@@ -8,9 +8,16 @@
   </head>
   <body>
     <div class="container">
-      <include src="./partials/components/header.html"></include>
+      <!-- <include src="./partials/components/header.html"></include> -->
       <include src="./partials/components/categories.html"></include>
       <include src="./partials/components/cards.html"></include>
+      <div class="page-container">
+        <button class="first-page" disabled>First</button>
+        <button class="prev-page" disabled>Prev</button>
+        <div id="pagination" class="pagination"></div>
+        <button class="next-page">Next</button>
+        <button class="last-page">Last</button>
+      </div>
     </div>
 
     <script src="./js/mobile-menu.js" type="module"></script>

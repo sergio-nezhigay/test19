@@ -16,3 +16,4 @@ export function removeFromStorage(id) {
   localStorage.setItem(STORAGE_KEY_NAME, JSON.stringify(result));
   return;
 }
+npm;

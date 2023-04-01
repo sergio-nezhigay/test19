@@ -19,6 +19,6 @@ const toggleMenu = () => {
   bodyScrollLock[scrollLockMethod](document.body);
 };
 
-openMenuBtn.addEventListener('click', toggleMenu);
-closeMenuBtn.addEventListener('click', toggleMenu);
-backdropEl.addEventListener('click', toggleMenu);
+// openMenuBtn.addEventListener('click', toggleMenu);
+// closeMenuBtn.addEventListener('click', toggleMenu);
+// backdropEl.addEventListener('click', toggleMenu);

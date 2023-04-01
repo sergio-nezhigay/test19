@@ -1,51 +1,37 @@
 import { NytimesAPI } from './nytimesAPI';
 import { elements } from './elements';
-import { handleFavoriteClick } from './favorites';
-import { articlesMarkup } from './markup';
-import { buttonsMarkup, dropdownMarkup } from './markup';
-import { addFavoriteField } from './favorites';
+import { buttonsMarkup, dropdownMarkup, articlesMarkup } from './markup';
+import { pagination, refreshPaginationData } from './pagination';
 
 const MIN_LARGE_SCREEN_WIDTH = 1280;
 const MIN_MEDIUM_SCREEN_WIDTH = 768;
 
 const nytimesAPI = new NytimesAPI();
-let limit = 0;
+
 let categoriesButtonQty = 0;
 
-elements.articles.addEventListener('click', handleFavoriteClick);
 init();
 
 async function init() {
   processScreenSize();
-  const pageNumber = 1;
-  const word = 'trump';
-  let keySearchResults = await nytimesAPI.searchNews({
-    word,
-    pageNumber,
-    limit,
-  });
-  keySearchResults = addFavoriteField(keySearchResults);
-  const markup = articlesMarkup(keySearchResults);
-
-  // let popular = await nytimesAPI.popularNews({ pageNumber, limit });
-  // popular = addFavoriteField(popular);
-  // const markup = articlesMarkup(popular);
-
-  elements.articles.insertAdjacentHTML('beforeend', markup);
-
   let results = await nytimesAPI.categoriesList();
-
   makeCategoryButtonsAndDropdown(results);
+  await makeRequestFillHtmlRefreshValuePage(1);
+  pagination();
 }
 
-async function makeCatagoryRequestAndMarkup(category) {
-  const pageNumber = 1;
-  const newsCatagory = await nytimesAPI.fetchNewsListFromCategorie({
-    category,
-    pageNumber,
-    limit,
+export async function makeRequestFillHtmlRefreshValuePage(pageNumber) {
+  let news = await nytimesAPI.getNextDataFromServer(pageNumber);
+  elements.articles.innerHTML = articlesMarkup(news);
+  refreshPaginationData({
+    curPage: pageNumber,
+    numLinksTwoSide: 1,
+    totalPages: calculatePages(nytimesAPI.numResults, nytimesAPI.limit),
   });
-  elements.articles.innerHTML = articlesMarkup(newsCatagory);
+}
+
+function calculatePages(totalNews, newsPerPage) {
+  return Math.ceil((totalNews + 1) / newsPerPage); // 1 - for weather!
 }
 
 export function makeCategoryButtonsAndDropdown(categories) {
@@ -64,23 +50,25 @@ export function makeCategoryButtonsAndDropdown(categories) {
 async function onCategoriesClick(e) {
   const category = e.target.dataset?.category;
   if (!category) return;
+  nytimesAPI.category = category;
   if (e.target.nodeName === 'BUTTON') {
     document.querySelector('.dropdown__filter-selected').textContent = 'Other';
   }
-  await makeCatagoryRequestAndMarkup(category);
+  await makeRequestFillHtmlRefreshValuePage(1);
+  pagination();
 }
 
 function processScreenSize() {
   if (window.matchMedia(`(min-width: ${MIN_LARGE_SCREEN_WIDTH}px)`).matches) {
-    limit = 9;
+    nytimesAPI.limit = 9;
     categoriesButtonQty = 6;
   } else if (
     window.matchMedia(`(min-width: ${MIN_MEDIUM_SCREEN_WIDTH}px)`).matches
   ) {
-    limit = 8;
+    nytimesAPI.limit = 8;
     categoriesButtonQty = 4;
   } else {
-    limit = 5;
+    nytimesAPI.limit = 5;
     categoriesButtonQty = 0;
   }
 }
