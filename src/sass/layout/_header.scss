@@ -1,28 +1,67 @@
-//============
-// Header
-//============
-
 .header {
-  padding: 28px 0;
-  &__nav {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+  min-height: 81px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 1000ms ease;
+
+  body.darkmode & {
+    border-color: rgba(0, 0, 0, 0.2);
   }
 }
 
-.menu {
-  @extend %list;
-  display: none;
-  gap: 15px;
-  @include for-size(tablet) {
-    display: flex;
+.header__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__thumb {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+
+  @include for-size('desktop') {
+    gap: 147px;
+  }
+}
+
+.header__nav {
+  @include for-size('tablet') {
+    margin-right: 32px;
   }
 
-  &__link {
-    @extend %link;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.39;
+  @include for-size('desktop') {
+    margin-right: 0;
+  }
+}
+
+.header__search-container {
+  display: flex;
+  align-items: center;
+
+  @include for-size('tablet') {
+    margin-right: 32px;
+  }
+
+  @include for-size('desktop') {
+    margin-right: 0;
+  }
+}
+
+.is-open {
+  @extend %resetGap;
+  border: none;
+  background-color: transparent;
+
+  @include for-size('tablet') {
+    display: none;
+  }
+}
+
+.btn-open__icon {
+  margin-left: 14px;
+  stroke: var(--color-primary);
+
+  body.darkmode & {
+    stroke: var(--color-bg-primary);
   }
 }

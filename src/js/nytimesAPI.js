@@ -24,7 +24,7 @@ class NytimesAPI {
     if (this._category) {
       return await this.fetchNewsListFromCategorie(pageNumber);
     } else if (this._word) {
-      return searchNews(this._currentWord, pageNumber);
+      return await this.searchNews(pageNumber);
     } else return await this.popularNews(pageNumber);
   }
 
@@ -40,31 +40,35 @@ class NytimesAPI {
   }
 
   async categoriesList() {
-    const { data } = await fetchCategories();
-    return data.results;
+    const response = await fetchCategories();
+    return response?.data?.results;
   }
 
   async popularNews(pageNumber = 1) {
     const newsPerPage = pageNumber === 1 ? this._limit - 1 : this._limit;
     if (!this._popular) {
       let imageUrl = '';
-      const { data } = await fetchPopular();
+      try {
+        const { data } = await fetchPopular();
+        const { results, num_results } = data;
+        this._num_results = num_results;
+        this._popular = results.map(article => {
+          if (article.media.length > 0)
+            imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
 
-      const { results, num_results } = data;
-      this._num_results = num_results;
-      this._popular = results.map(article => {
-        if (article.media.length > 0)
-          imageUrl = this.selectByFormat(article.media[0]['media-metadata']);
-
-        return {
-          title: article.title,
-          date: article.published_date,
-          abstract: article.abstract,
-          url: article.url,
-          section: article.section,
-          imageUrl,
-        };
-      });
+          return {
+            title: article.title,
+            date: article.published_date,
+            abstract: article.abstract,
+            url: article.url,
+            section: article.section,
+            imageUrl,
+          };
+        });
+      } catch (error) {
+        console.error(`Error fetching popular news: ${error.message}`);
+        return [];
+      }
     }
     const startIndex = (pageNumber - 1) * newsPerPage;
     const endIndex = startIndex + newsPerPage;
@@ -84,50 +88,60 @@ class NytimesAPI {
   async fetchNewsListFromCategorie(pageNumber) {
     const newsPerPage = pageNumber === 1 ? this._limit - 1 : this._limit;
     try {
-      const { data } = await fetchCategory({
+      const result = await fetchCategory({
         category: this._category,
         pageNumber,
         limit: newsPerPage,
       });
-      const { results, num_results } = data;
-      this._num_results = num_results;
-      return results.map(article => {
-        return {
-          title: article.title,
-          date: article.published_date,
-          abstract: article.abstract,
-          section: article.section,
-          url: article.url,
-          imageUrl: this.selectByFormat(article.multimedia),
-        };
-      });
+
+      const data = result?.data;
+      if (data) {
+        const { results, num_results } = data;
+        this._num_results = num_results;
+        return results.map(article => {
+          return {
+            title: article.title,
+            date: article.published_date,
+            abstract: article.abstract,
+            section: article.section,
+            url: article.url,
+            imageUrl: this.selectByFormat(article.multimedia),
+          };
+        });
+      } else return [];
     } catch (error) {
       console.error(`Error fetching news list from category: ${error.message}`);
       return [];
     }
   }
 
-  async searchNews({ word, pageNumber, limit }) {
-    if (pageNumber === 1) limit--;
-    const { data } = await fetchQuery({ word, pageNumber });
-    const { docs, meta } = data.response;
-    this._num_results = meta.hits;
-    this._word = word;
-    const result = docs.map(article => {
-      const imageXlarge = article.multimedia.find(
-        media => media.subtype === 'xlarge'
+  async searchNews(pageNumber) {
+    const newsPerPage = pageNumber === 1 ? this._limit - 1 : this._limit;
+    try {
+      const { data } = await fetchQuery(this._word, pageNumber);
+      const { docs, meta } = data.response;
+      this._num_results = meta.hits;
+      const result = docs.map(article => {
+        const imageXlarge = article.multimedia.find(
+          media => media.subtype === 'xlarge'
+        );
+        const imageUrl = imageXlarge ? NY_URL + imageXlarge.url : null;
+        return {
+          title: article.headline.main,
+          date: article.pub_date,
+          abstract: article.abstract,
+          url: article.url,
+          section: article.section_name,
+          imageUrl,
+        };
+      });
+      return result.slice(0, newsPerPage);
+    } catch (error) {
+      console.error(
+        `Error searchinh news list from category: ${error.message}`
       );
-      const imageUrl = imageXlarge ? NY_URL + imageXlarge.url : null;
-      return {
-        title: article.headline.main,
-        date: article.pub_date,
-        abstract: article.abstract,
-        url: article.url,
-        section: article.section_name,
-        imageUrl,
-      };
-    });
-    return result.slice(0, limit);
+      return [];
+    }
   }
 
   set limit(newLimit) {
@@ -136,6 +150,10 @@ class NytimesAPI {
 
   set category(newCategory) {
     this._category = newCategory;
+  }
+
+  set searchTerm(newTerm) {
+    this._word = newTerm;
   }
 
   get limit() {

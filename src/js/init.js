@@ -8,26 +8,55 @@ const MIN_MEDIUM_SCREEN_WIDTH = 768;
 
 const nytimesAPI = new NytimesAPI();
 
-let categoriesButtonQty = 0;
+let categoriesButtonQty = 0,
+  indexForWeatherBlock = 0;
+elements.searchForm.addEventListener('submit', onSearchForm);
 
 init();
 
 async function init() {
   processScreenSize();
   let results = await nytimesAPI.categoriesList();
-  makeCategoryButtonsAndDropdown(results);
+  if (!results.length) {
+    console.log('error in reading categories');
+  } else {
+    makeCategoryButtonsAndDropdown(results);
+  }
+  await makeRequestFillHtmlRefreshValuePage(1);
+  pagination();
+}
+
+async function onSearchForm(e) {
+  e.preventDefault();
+  const searchString = e.target.elements.querySearch.value.trim();
+  nytimesAPI.reset();
+  nytimesAPI.searchTerm = searchString;
   await makeRequestFillHtmlRefreshValuePage(1);
   pagination();
 }
 
 export async function makeRequestFillHtmlRefreshValuePage(pageNumber) {
-  let news = await nytimesAPI.getNextDataFromServer(pageNumber);
-  elements.articles.innerHTML = articlesMarkup(news);
-  refreshPaginationData({
-    curPage: pageNumber,
-    numLinksTwoSide: 1,
-    totalPages: calculatePages(nytimesAPI.numResults, nytimesAPI.limit),
-  });
+  const textToAdd = `<li class="articles__item">
+                      <h2>The weather!!!!!!!!!!!!!</h2>
+                    </li>`;
+  try {
+    const news = await nytimesAPI.getNextDataFromServer(pageNumber);
+    if (news.length > 0) {
+      // elements.articles.innerHTML = articlesMarkup(news);
+      elements.articles.innerHTML =
+        pageNumber === 1
+          ? articlesMarkup(news, indexForWeatherBlock)
+          : articlesMarkup(news, -1);
+
+      refreshPaginationData({
+        curPage: pageNumber,
+        numLinksTwoSide: 1,
+        totalPages: calculatePages(nytimesAPI.numResults, nytimesAPI.limit),
+      });
+    }
+  } catch (error) {
+    console.log('Error catched in makeRequestFillHtmlRefreshValuePage');
+  }
 }
 
 function calculatePages(totalNews, newsPerPage) {
@@ -50,6 +79,7 @@ export function makeCategoryButtonsAndDropdown(categories) {
 async function onCategoriesClick(e) {
   const category = e.target.dataset?.category;
   if (!category) return;
+  nytimesAPI.reset();
   nytimesAPI.category = category;
   if (e.target.nodeName === 'BUTTON') {
     document.querySelector('.dropdown__filter-selected').textContent = 'Other';
@@ -62,14 +92,17 @@ function processScreenSize() {
   if (window.matchMedia(`(min-width: ${MIN_LARGE_SCREEN_WIDTH}px)`).matches) {
     nytimesAPI.limit = 9;
     categoriesButtonQty = 6;
+    indexForWeatherBlock = 2;
   } else if (
     window.matchMedia(`(min-width: ${MIN_MEDIUM_SCREEN_WIDTH}px)`).matches
   ) {
     nytimesAPI.limit = 8;
     categoriesButtonQty = 4;
+    indexForWeatherBlock = 1;
   } else {
     nytimesAPI.limit = 5;
     categoriesButtonQty = 0;
+    indexForWeatherBlock = 0;
   }
 }
 

@@ -9,45 +9,97 @@ export function buttonsMarkup(categories) {
   return `<ul class="categories__list">${markup}</ul>`;
 }
 
-export function articlesMarkup(articles) {
+export function articlesMarkup(articles, insertBlock) {
   const markup = articles
-    .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
-      const buttonText = favorite ? 'Remove from Favorites' : 'Add to Favorite';
-      const testObjectForButton = {
-        abstract,
-        imageUrl,
-        title,
-        url,
-        section,
-        favorite,
-      };
-      const stringForButton = JSON.stringify(testObjectForButton);
-      return `
-    <li class="articles__item">
-      <div class="articles__image-wrapper">
-        <img src="${imageUrl}" class="articles__image" />
-        <p class="articles__category">${section}</p>
-        <button class="articles__button" data-id="${url}" data-favorite="${favorite}" data-info="${stringForButton}">${buttonText}</button>
-      </div>
-      <div class="articles__details">
-        <h2 class="articles__title">
-          ${title}
-        </h2>
-        <p class="articles__abstract">
-          ${abstract}
-        </p>
-        <div class="articles__row">
-          <p class="articles__date">${date.split(' ')[0]}</p>
-
-          <a href="${url}" class="articles__link">Read more</a>
-        </div>
-      </div>
-    </li>
-  `;
-    })
+    .map(
+      (
+        { abstract, date = '', imageUrl, title, url, section, favorite },
+        index
+      ) => {
+        const buttonText = favorite
+          ? 'Remove from Favorites'
+          : 'Add to Favorite';
+        const testObjectForButton = {
+          abstract,
+          imageUrl,
+          title,
+          url,
+          section,
+          favorite,
+        };
+        const stringForButton = JSON.stringify(testObjectForButton);
+        let articleMarkup = '';
+        if (index === insertBlock) {
+          articleMarkup +=
+            '<li class="articles__item special"><p>This is a special item</p></li>';
+        }
+        articleMarkup += `
+        <li class="articles__item">
+          <div class="articles__image-wrapper">
+            <img src="${imageUrl}" class="articles__image" />
+            <p class="articles__category">${section}</p>
+            <button class="articles__button" data-id="${url}" data-favorite="${favorite}" data-info="${stringForButton}">${buttonText}</button>
+          </div>
+          <div class="articles__details">
+            <h2 class="articles__title">
+              ${title}
+            </h2>
+            <p class="articles__abstract">
+              ${abstract}
+            </p>
+            <div class="articles__row">
+              <p class="articles__date">${date.split(' ')[0]}</p>
+              <a href="${url}" class="articles__link">Read more</a>
+            </div>
+          </div>
+        </li>
+      `;
+        return articleMarkup;
+      }
+    )
     .join('');
   return markup;
 }
+
+// export function articlesMarkup(articles) {
+//   const markup = articles
+//     .map(({ abstract, date = '', imageUrl, title, url, section, favorite }) => {
+//       const buttonText = favorite ? 'Remove from Favorites' : 'Add to Favorite';
+//       const testObjectForButton = {
+//         abstract,
+//         imageUrl,
+//         title,
+//         url,
+//         section,
+//         favorite,
+//       };
+//       const stringForButton = JSON.stringify(testObjectForButton);
+//       return `
+//     <li class="articles__item">
+//       <div class="articles__image-wrapper">
+//         <img src="${imageUrl}" class="articles__image" />
+//         <p class="articles__category">${section}</p>
+//         <button class="articles__button" data-id="${url}" data-favorite="${favorite}" data-info="${stringForButton}">${buttonText}</button>
+//       </div>
+//       <div class="articles__details">
+//         <h2 class="articles__title">
+//           ${title}
+//         </h2>
+//         <p class="articles__abstract">
+//           ${abstract}
+//         </p>
+//         <div class="articles__row">
+//           <p class="articles__date">${date.split(' ')[0]}</p>
+
+//           <a href="${url}" class="articles__link">Read more</a>
+//         </div>
+//       </div>
+//     </li>
+//   `;
+//     })
+//     .join('');
+//   return markup;
+// }
 
 export function dropdownMarkup(categories) {
   const markup = categories

@@ -4,10 +4,10 @@
 
 // ABSTRACT
 @import 'abstracts/variables';
-
 @import 'abstracts/mixins';
 @import 'abstracts/helpers';
-// @import 'abstracts/functions';
+@import 'abstracts/functions';
+@import 'abstracts/placeholders';
 
 // BASE
 
@@ -20,28 +20,16 @@
 // LAYOUT
 
 @import 'layout/pagination';
-@import 'layout/mobile-menu';
-@import 'layout/modal';
-@import 'layout/logo';
 
+@import 'layout/modal';
+@import 'layout/header';
+@import 'layout/menu';
+@import 'layout/search';
+@import 'layout/mobile-menu';
+@import 'layout/logo';
+@import 'layout/toggle-mode';
 @import 'layout/articles';
 
-// COMPONENTS
-// @import 'components/logo';
-// @import 'components/buttons';
-
 // PAGES
-@import 'pages/home/hero';
-@import 'pages/home/services';
-@import 'pages/home/crew';
-@import 'pages/home/brands';
-@import 'pages/home/publications';
-@import 'pages/home/team';
-@import 'pages/service';
-@import 'pages/member';
-@import 'pages/aboutus';
-@import 'pages/publication';
-@import 'pages/categories';
 
-// VENDORS
-@import 'vendor/bootstrap';
+@import 'pages/categories';

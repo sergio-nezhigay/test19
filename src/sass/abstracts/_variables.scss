@@ -3,15 +3,14 @@
 //============
 
 :root {
-  --color-black: #111321;
+  --color-primary: #111321;
+  --color-bg-primary: #f4f4f4;
+  --color-bg-inversed: #2e2e2e;
   --color-white: #fff;
   --color-accent: #4440f6;
   --color-grey: #a8a8a8;
-
   --font-primary: 'Manrope', sans-serif;
-
   --animation: 2.3s cubic-bezier(0.19, 1, 0.22, 1);
-
   --padding: 16px;
 }
 
@@ -25,3 +24,12 @@
 $mobile: 320px;
 $tablet: 768px;
 $desktop: 1280px;
+
+// $colors: (
+//   'background-primary': #f4f4f4,
+//   'background-reversed': #2e2e2e,
+//   'primary': #111321,
+//   'primary-reversed': #ffffff,
+//   'accent': #4440f6,
+//   'grey': #a8a8a8,
+// );

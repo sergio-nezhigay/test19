@@ -1,0 +1,149 @@
+.toggle-mode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 98px;
+  height: 21px;
+  @extend %resetGap;
+
+  @include for-size(mobile-only) {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    &.mobile {
+      display: flex;
+      position: absolute;
+      z-index: 6;
+      bottom: 18;
+      opacity: 100%;
+      pointer-events: all;
+      visibility: inherit;
+    }
+  }
+
+  @include for-size(desktop) {
+    gap: 12px;
+    width: 148px;
+    height: 24px;
+  }
+}
+
+.toggle-mode__icon {
+  @include for-size(desktop) {
+    display: none;
+  }
+}
+
+.sun {
+  fill: transparent;
+  stroke: var(--color-accent);
+
+  body.darkmode & {
+    fill: transparent;
+    stroke: #5f6775;
+  }
+}
+
+.moon {
+  fill: transparent;
+  stroke: #5f6775;
+
+  body.darkmode & {
+    fill: transparent;
+    stroke: var(--color-accent);
+  }
+}
+
+.toggle-mode__switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-mode__checkbox {
+  display: none;
+}
+
+.toggle-mode__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-bg-primary);
+}
+
+.toggle-mode__slider::before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 1px;
+  bottom: 1px;
+  background-color: var(--color-accent);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.toggle-mode__slider.round {
+  border-radius: 34px;
+}
+
+.toggle-mode__slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .toggle-mode__slider:before {
+  background-color: var(--color-bg-inversed);
+}
+
+input:checked + .toggle-mode__slider {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-bg-inversed);
+}
+
+input:focus + .toggle-mode__slider {
+  box-shadow: 0 0 1px var(--color-accent);
+}
+
+input:checked + .toggle-mode__slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(20px);
+}
+
+.toggle-mode__dark {
+  display: none;
+
+  @include for-size(desktop) {
+    display: block;
+    font-size: 18px;
+    color: #5f6775;
+
+    body.darkmode & {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.toggle-mode__light {
+  display: none;
+  color: var(--color-accent);
+
+  @include for-size(desktop) {
+    display: block;
+    font-size: 18px;
+
+    body.darkmode & {
+      color: var(--color-bg-primary);
+      filter: opacity(25%);
+    }
+  }
+}

@@ -111,7 +111,7 @@ function handleButton(element) {
   if (element.classList.contains('first-page')) {
     valuePage.curPage = 1;
   } else if (element.classList.contains('last-page')) {
-    valuePage.curPage = 10;
+    valuePage.curPage = valuePage.totalPages;
   } else if (element.classList.contains('prev-page')) {
     valuePage.curPage--;
     handleButtonLeft();
@@ -122,8 +122,9 @@ function handleButton(element) {
     handleButtonRight();
     btnPrevPg.disabled = false;
     btnFirstPg.disabled = false;
-  }
+  } else return;
   pagination();
+  makeRequestFillHtmlRefreshValuePage(valuePage.curPage);
 }
 function handleButtonLeft() {
   if (valuePage.curPage === 1) {
